@@ -354,6 +354,9 @@
   left: 10px;
   padding-right: 8px;
 }
+.new-in-veevva{
+ justify-content: flex-end;
+}
 .time {
   width: 92px;
   height: 37px;
@@ -822,11 +825,15 @@
 
 
 /* Хиты продаж */
+.bestsell{
+  margin-top: 50px;
+}
 .bestsellers {
   max-width: 1320px;
   width: 100%;
   display: flex;
   grid-gap: 20px;
+  margin-top: 26px;
 }
 .big-product {
   max-width: 650px;
@@ -889,7 +896,7 @@
 .bestsellers-price {
   margin-top: 8px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 140%;
   color: #000000;
   padding-left: 15px;
@@ -1017,6 +1024,11 @@
   .bottom-second {
     max-width: 339px;
     width: 100%;
+  }
+}
+@media(max-width:980px) {
+  .bestsellers{
+    margin-top: 25px;
   }
 }
 /* ----------------------------------------------- */
