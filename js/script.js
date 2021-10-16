@@ -62,7 +62,6 @@ closeMenu.addEventListener("click", () => {
 })
 
 for(let i = 0; i < navItem.length; i++) {
-
   navItem[i].addEventListener("click", () => {
     let content = navItem[i].nextElementSibling
     let content2 = navItem[i].previousElementSibling
@@ -70,10 +69,12 @@ for(let i = 0; i < navItem.length; i++) {
       content.classList.remove('active2')
     } else {
       content2.classList.remove('active2')
-      content.classList.toggle('active2')
+      content.classList.add('active2')
     }
   })
 }
+
+
 // SLIDER-----------------------------------------------------------
 const slideImage = document.querySelectorAll(".slide-item");
 const slidesContainer = document.querySelector(".slides-container");
