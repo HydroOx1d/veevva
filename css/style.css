@@ -7,7 +7,6 @@
   font-display: swap;
   src: url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/file_name.woff2") format("woff2");
   font-weight: 700;
-  font-style: bold;
 }
 
 @font-face {
@@ -479,19 +478,10 @@
           align-items: center;
   font-family: "Roboto-Regular";
   font-size: 18px;
-}
-
-.header__navigation--item h5 {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 400;
-  font-family: "Roboto-Regular";
   cursor: pointer;
-  transition: 50ms ease-in 0s;
 }
 
-.header__navigation--item h5:hover {
+.header__navigation--item:hover {
   opacity: .5;
 }
 
@@ -572,11 +562,10 @@
   position: fixed;
   background-color: #fff;
   top: -200%;
-  left: 26.2%;
   height: 100%;
-  width: 35%;
+  width: 20%;
   margin: 0;
-  padding: 70px 100px;
+  padding: 70px 10px;
   -webkit-transition: 200ms linear 0s;
   -o-transition: 200ms linear 0s;
   transition: 200ms linear 0s;
@@ -584,6 +573,7 @@
   display: -ms-flexbox;
   display: flex;
   line-height: 2.3;
+  z-index: 100;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -604,10 +594,9 @@
 }
 
 .header__navigation--back {
-  display: none;
   position: absolute;
   top: 10px;
-  left: 20px;
+  left: 10px;
   cursor: pointer;
 }
 
@@ -913,7 +902,7 @@ a:hover {
   }
 
   .header__navigation--menu2 {
-    left: 38%;
+    width: 100%;
   }
 
   .saleshits__inner {
@@ -947,9 +936,12 @@ a:hover {
   }
 
   .header__navigation--menu2 {
-    left: 45%;
     width: 100%;
-    padding: 40px 60px;
+    padding: 80px 60px;
+  }
+
+  .header__navigation--back {
+    left: 0;
   }
 
   .footer__inner {
@@ -1051,6 +1043,7 @@ a:hover {
 
   .header__navigation--back {
     display: block;
+    left: 15px;
   }
 
   .footer {

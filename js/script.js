@@ -23,10 +23,9 @@ const navigation = document.querySelector(".header__navigation--menu")
 const navBtn = document.querySelector(".header__navigation--toggle")
 const head = document.querySelector(".header")
 const closeMenu = document.querySelector(".header__navigation--close")
-const navigation2 = document.querySelector(".header__navigation--menu2")
+const navigation2 = document.querySelectorAll(".header__navigation--menu2")
 const navItem = document.querySelectorAll(".header__navigation--item")
-const navBtn2 = document.querySelectorAll(".header__navigation--item h5")
-const backUp = document.querySelector('.header__navigation--back')
+const backUp = document.querySelectorAll('.header__navigation--back')
 
 let bgc = document.createElement('div')
 bgc.className = 'bgc'
@@ -38,14 +37,19 @@ navBtn.addEventListener("click", () => {
   head.appendChild(bgc)
 })
 
-backUp.addEventListener("click", () => {
-  navigation2.classList.remove("active2")
-  navItem[3].classList.remove("active3")
-})
+for(let i = 0; i < backUp.length; i++) {
+  backUp[i].addEventListener("click", () => {
+    for(let i = 0; i < navigation2.length; i++) {
+      navigation2[i].classList.remove('active2')
+    }
+  })
+}
 
-bgc.onclick = function(e) {
+bgc.onclick = function() {
   navigation.classList.remove('active')
-  navigation2.classList.remove('active2')
+  for(let i = 0; i < navigation2.length; i++) {
+    navigation2[i].classList.remove('active2')
+  }
   navItem[3].classList.remove("active3")
   head.removeChild(bgc)
   document.body.style.overflow = "auto"
@@ -57,14 +61,19 @@ closeMenu.addEventListener("click", () => {
   head.removeChild(bgc)
 })
 
-navBtn2.forEach(el => {
-  return el.addEventListener("click", () => {
-    navigation2.classList.toggle('active2')
-    navItem[3].classList.toggle("active3")
+for(let i = 0; i < navItem.length; i++) {
+
+  navItem[i].addEventListener("click", () => {
+    let content = navItem[i].nextElementSibling
+    let content2 = navItem[i].previousElementSibling
+    if(content.classList.contains('active2')) {
+      content.classList.remove('active2')
+    } else {
+      content2.classList.remove('active2')
+      content.classList.toggle('active2')
+    }
   })
-})
-
-
+}
 // SLIDER-----------------------------------------------------------
 const slideImage = document.querySelectorAll(".slide-item");
 const slidesContainer = document.querySelector(".slides-container");
@@ -144,7 +153,7 @@ $('.logo-slider').slick({
         infinite: true,
       },
     },
-    
+
     {
       breakpoint: 400,
       settings: {
@@ -153,6 +162,6 @@ $('.logo-slider').slick({
         infinite: true,
       },
     },
-    
+
   ],
 });
