@@ -8,7 +8,6 @@
   src: url("../fonts/Montserrat-Bold.woff") format("woff"),
     url("../fonts/file_name.woff2") format("woff2");
   font-weight: 700;
-  font-style: bold;
 }
 
 @font-face {
@@ -536,7 +535,7 @@
   height: 100%;
   top: 0;
   left: -200%;
-  padding: 70px 100px;
+  padding: 70px 80px;
   -webkit-transition: 300ms ease-in-out 0s;
   -o-transition: 300ms ease-in-out 0s;
   transition: 300ms ease-in-out 0s;
@@ -557,21 +556,12 @@
   -ms-flex-align: center;
   align-items: center;
   font-family: "Roboto-Regular";
-  font-size: 18px;
-}
-
-.header__navigation--item h5 {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 400;
-  font-family: "Roboto-Regular";
+  font-size: 16px;
   cursor: pointer;
-  transition: 50ms ease-in 0s;
 }
 
-.header__navigation--item h5:hover {
-  opacity: 0.5;
+.header__navigation--item:hover {
+  opacity: .5;
 }
 
 .header__navigation--close {
@@ -651,19 +641,17 @@
 .header__navigation--menu2 {
   position: fixed;
   background-color: #fff;
-  top: -200%;
-  left: 26.2%;
+  top: 0;
+  left: 22.8%;
   height: 100%;
   width: 35%;
   margin: 0;
-  padding: 70px 100px;
-  -webkit-transition: 200ms linear 0s;
-  -o-transition: 200ms linear 0s;
-  transition: 200ms linear 0s;
+  padding: 50px 100px;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: none;
   line-height: 2.3;
+  z-index: 100;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -678,7 +666,7 @@
 }
 
 .header__navigation--menu2 a {
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   color: #000;
 }
@@ -687,7 +675,7 @@
   display: none;
   position: absolute;
   top: 10px;
-  left: 20px;
+  left: 10px;
   cursor: pointer;
 }
 
@@ -1090,7 +1078,7 @@ a:hover {
 }
 
 .active2 {
-  top: 0;
+  display: flex;
 }
 
 .active3 {
@@ -1127,7 +1115,8 @@ a:hover {
   }
 
   .header__navigation--menu2 {
-    left: 38%;
+    width: 50%;
+    left: 34%;
   }
 
   .saleshits__inner {
@@ -1161,9 +1150,13 @@ a:hover {
   }
 
   .header__navigation--menu2 {
+    width: 50%;
     left: 45%;
-    width: 100%;
-    padding: 40px 60px;
+    padding: 80px 40px;
+  }
+
+  .header__navigation--back {
+    left: 0;
   }
 
   .footer__inner {
@@ -1209,6 +1202,9 @@ a:hover {
 @media only screen and (max-width: 768px) {
   .stories-container {
     margin-top: 60px;
+  }
+  .header__navigation--menu2 {
+    left: 47%;
   }
   .saleshits__nav {
     padding: 20px 0;
@@ -1265,6 +1261,7 @@ a:hover {
 
   .header__navigation--back {
     display: block;
+    left: 15px;
   }
 
   .footer {
