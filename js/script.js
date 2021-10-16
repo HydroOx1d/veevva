@@ -147,7 +147,7 @@ $(".logo-slider").slick({
   infinity: true,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1094,
       settings: {
         slidesToShow: 6,
         slidesToScroll: 3,
@@ -155,10 +155,18 @@ $(".logo-slider").slick({
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 800,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
         infinite: true,
       },
     },

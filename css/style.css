@@ -351,6 +351,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
+  padding-right: 8px;
 }
 .time {
   width: 92px;
@@ -598,6 +599,7 @@
   font-size: 18px;
   border: none;
   background-color: #f1f1f1;
+  outline: none;
 }
 
 .header__search input::-webkit-input-placeholder {
@@ -1311,5 +1313,19 @@ a:hover {
   }
   .slide-text {
     margin-left: 10px;
+  }
+  .time-like{
+    width: 280px;
+  }
+}
+@media (max-width: 350px) {
+  .time-like{
+    width: 100%;
+    left: 5px;
+    right: 5px;
+  }
+  .modal{
+    width: 200px;
+    height: 300px;
   }
 }
