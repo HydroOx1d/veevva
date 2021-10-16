@@ -1,4 +1,3 @@
-
 // функция определения поддержки WebP=================================================
 function testWebP(callback) {
   var webP = new Image();
@@ -17,8 +16,6 @@ testWebP(function (support) {
   }
 });
 
-
-
 const navigation = document.querySelector(".header__navigation--menu")
 const navBtn = document.querySelector(".header__navigation--toggle")
 const head = document.querySelector(".header")
@@ -32,10 +29,10 @@ bgc.className = 'bgc'
 
 
 navBtn.addEventListener("click", () => {
-  navigation.classList.add('active')
-  document.body.style.overflow = "hidden"
-  head.appendChild(bgc)
-})
+  navigation.classList.add("active");
+  document.body.style.overflow = "hidden";
+  head.appendChild(bgc);
+});
 
 for(let i = 0; i < backUp.length; i++) {
   backUp[i].addEventListener("click", () => {
@@ -56,10 +53,10 @@ bgc.onclick = function() {
 }
 
 closeMenu.addEventListener("click", () => {
-  navigation.classList.remove('active')
-  document.body.style.overflow = "auto"
-  head.removeChild(bgc)
-})
+  navigation.classList.remove("active");
+  document.body.style.overflow = "auto";
+  head.removeChild(bgc);
+});
 
 for(let i = 0; i < navItem.length; i++) {
   navItem[i].addEventListener("click", () => {
@@ -73,7 +70,30 @@ for(let i = 0; i < navItem.length; i++) {
     }
   })
 }
+//STORIES-----------------------------------------------------------
 
+const stories = document.querySelectorAll(".stories");
+stories.forEach((store) => {
+  store.addEventListener("click", () => {
+    const modalBackground = document.createElement("div");
+    modalBackground.classList.add("backgroundModal");
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    const close = document.createElement("button");
+    close.classList.add("close");
+    close.innerText = "x";
+    modal.appendChild(close);
+    modalBackground.appendChild(modal);
+    document.body.appendChild(modalBackground);
+
+    setTimeout(() => {
+      modalBackground.remove();
+    }, 2000);
+    close.addEventListener("click", () => {
+      modalBackground.remove();
+    });
+  });
+});
 
 // SLIDER-----------------------------------------------------------
 const slideImage = document.querySelectorAll(".slide-item");
@@ -128,18 +148,17 @@ function goToSlide(slideNumber) {
   currentSlide = slideNumber;
 }
 
-
 // CAROUSEL------------------------------------------------------------------------
-$('.logo-slider').slick({
+$(".logo-slider").slick({
   slidesToShow: 9,
   slidesToScroll: 1,
   arrows: true,
-  autoplay:true,
+  autoplay: true,
   autoplaySpeed: 2000,
-  infinity:true,
+  infinity: true,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1094,
       settings: {
         slidesToShow: 6,
         slidesToScroll: 3,
@@ -147,10 +166,18 @@ $('.logo-slider').slick({
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 800,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
         infinite: true,
       },
     },
@@ -163,6 +190,30 @@ $('.logo-slider').slick({
         infinite: true,
       },
     },
-
   ],
 });
+// CARDS
+const likes = document.querySelectorAll(".like");
+
+likes.forEach((like) => {
+  like.addEventListener("click", () => {
+    const redLike = `<div class="like-img-container">
+    <img src="./img/cardImg/like.png" alt=""/>
+  </div>`;
+    like.innerHTML = redLike;
+  });
+});
+
+
+const startingMinutes = 30
+const seconds = startingMinutes * 60
+const time = document.querySelectorAll('.time')
+
+setInterval(updateCount , 1000)
+
+function updateCount(){
+const minutes = Math.floor(seconds / 60)
+let secondT = seconds % 60
+
+time.innerHTML = ` ${minutes} : ${secondT}`
+}
