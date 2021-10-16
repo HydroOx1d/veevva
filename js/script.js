@@ -1,4 +1,3 @@
-
 // функция определения поддержки WebP=================================================
 function testWebP(callback) {
   var webP = new Image();
@@ -17,53 +16,73 @@ testWebP(function (support) {
   }
 });
 
+const navigation = document.querySelector(".header__navigation--menu");
+const navBtn = document.querySelector(".header__navigation--toggle");
+const head = document.querySelector(".header");
+const closeMenu = document.querySelector(".header__navigation--close");
+const navigation2 = document.querySelector(".header__navigation--menu2");
+const navItem = document.querySelectorAll(".header__navigation--item");
+const navBtn2 = document.querySelectorAll(".header__navigation--item h5");
+const backUp = document.querySelector(".header__navigation--back");
 
-
-const navigation = document.querySelector(".header__navigation--menu")
-const navBtn = document.querySelector(".header__navigation--toggle")
-const head = document.querySelector(".header")
-const closeMenu = document.querySelector(".header__navigation--close")
-const navigation2 = document.querySelector(".header__navigation--menu2")
-const navItem = document.querySelectorAll(".header__navigation--item")
-const navBtn2 = document.querySelectorAll(".header__navigation--item h5")
-const backUp = document.querySelector('.header__navigation--back')
-
-let bgc = document.createElement('div')
-bgc.className = 'bgc'
-
+let bgc = document.createElement("div");
+bgc.className = "bgc";
 
 navBtn.addEventListener("click", () => {
-  navigation.classList.add('active')
-  document.body.style.overflow = "hidden"
-  head.appendChild(bgc)
-})
+  navigation.classList.add("active");
+  document.body.style.overflow = "hidden";
+  head.appendChild(bgc);
+});
 
 backUp.addEventListener("click", () => {
-  navigation2.classList.remove("active2")
-  navItem[3].classList.remove("active3")
-})
+  navigation2.classList.remove("active2");
+  navItem[3].classList.remove("active3");
+});
 
-bgc.onclick = function(e) {
-  navigation.classList.remove('active')
-  navigation2.classList.remove('active2')
-  navItem[3].classList.remove("active3")
-  head.removeChild(bgc)
-  document.body.style.overflow = "auto"
-}
+bgc.onclick = function (e) {
+  navigation.classList.remove("active");
+  navigation2.classList.remove("active2");
+  navItem[3].classList.remove("active3");
+  head.removeChild(bgc);
+  document.body.style.overflow = "auto";
+};
 
 closeMenu.addEventListener("click", () => {
-  navigation.classList.remove('active')
-  document.body.style.overflow = "auto"
-  head.removeChild(bgc)
-})
+  navigation.classList.remove("active");
+  document.body.style.overflow = "auto";
+  head.removeChild(bgc);
+});
 
-navBtn2.forEach(el => {
+navBtn2.forEach((el) => {
   return el.addEventListener("click", () => {
-    navigation2.classList.toggle('active2')
-    navItem[3].classList.toggle("active3")
-  })
-})
+    navigation2.classList.toggle("active2");
+    navItem[3].classList.toggle("active3");
+  });
+});
+//STORIES-----------------------------------------------------------
 
+const stories = document.querySelectorAll(".stories");
+stories.forEach((store) => {
+  store.addEventListener("click", () => {
+    const modalBackground = document.createElement("div");
+    modalBackground.classList.add("backgroundModal");
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    const close = document.createElement("button");
+    close.classList.add("close");
+    close.innerText = "X";
+    modal.appendChild(close);
+    modalBackground.appendChild(modal);
+    document.body.appendChild(modalBackground);
+
+    setTimeout(() => {
+      modalBackground.remove();
+    }, 2000);
+    close.addEventListener("click", () => {
+      modalBackground.remove();
+    });
+  });
+});
 
 // SLIDER-----------------------------------------------------------
 const slideImage = document.querySelectorAll(".slide-item");
@@ -118,15 +137,14 @@ function goToSlide(slideNumber) {
   currentSlide = slideNumber;
 }
 
-
 // CAROUSEL------------------------------------------------------------------------
-$('.logo-slider').slick({
+$(".logo-slider").slick({
   slidesToShow: 9,
   slidesToScroll: 1,
   arrows: true,
-  autoplay:true,
+  autoplay: true,
   autoplaySpeed: 2000,
-  infinity:true,
+  infinity: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -144,7 +162,7 @@ $('.logo-slider').slick({
         infinite: true,
       },
     },
-    
+
     {
       breakpoint: 400,
       settings: {
@@ -153,6 +171,5 @@ $('.logo-slider').slick({
         infinite: true,
       },
     },
-    
   ],
 });
