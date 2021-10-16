@@ -70,7 +70,7 @@ stories.forEach((store) => {
     modal.classList.add("modal");
     const close = document.createElement("button");
     close.classList.add("close");
-    close.innerText = "X";
+    close.innerText = "x";
     modal.appendChild(close);
     modalBackground.appendChild(modal);
     document.body.appendChild(modalBackground);
@@ -172,4 +172,15 @@ $(".logo-slider").slick({
       },
     },
   ],
+});
+// CARDS
+const likes = document.querySelectorAll(".like");
+
+likes.forEach((like) => {
+  like.addEventListener("click", () => {
+    const redLike = `<div class="like-img-container">
+    <img src="./img/cardImg/like.png" alt=""/>
+  </div>`;
+    like.innerHTML = redLike;
+  });
 });
