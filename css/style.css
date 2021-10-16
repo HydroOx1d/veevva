@@ -42,17 +42,24 @@
   position: relative;
   max-width: 1320px;
   width: 100%;
+  position: relative;
 }
 
 .slides-container {
   height: 100%;
   transition: 900ms cubic-bezier(0.48, 0.15, 0.18, 1);
+  position: relative;
+}
+.container-video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .slide-item {
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, #443df6 0%, #7028e4 54.46%);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -60,6 +67,7 @@
   left: 0;
   transition: transform 0.5s ease-in-out;
 }
+
 
 .slide-item img {
   width: 100%;
