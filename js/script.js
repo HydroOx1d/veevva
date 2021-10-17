@@ -16,19 +16,18 @@ testWebP(function (support) {
   }
 });
 
-const navigation = document.querySelector(".header__navigation--menu")
-const navBtn = document.querySelector(".header__navigation--toggle")
-const head = document.querySelector(".header")
-const closeMenu = document.querySelector(".header__navigation--close")
-const navigation2 = document.querySelectorAll(".header__navigation--menu2")
-const navItem = document.querySelectorAll(".header__navigation--item")
-const backUp = document.querySelectorAll('.header__navigation--back')
+const navigation = document.querySelector(".header__navigation--menu");
+const navBtn = document.querySelector(".header__navigation--toggle");
+const head = document.querySelector(".header");
+const closeMenu = document.querySelector(".header__navigation--close");
+const navigation2 = document.querySelectorAll(".header__navigation--menu2");
+const navItem = document.querySelectorAll(".header__navigation--item");
+const backUp = document.querySelectorAll(".header__navigation--back");
 
-let bgc = document.createElement('div')
-bgc.className = 'bgc'
-let menuBgc = document.createElement('div')
-menuBgc.className = 'header--menu__bgc'
-
+let bgc = document.createElement("div");
+bgc.className = "bgc";
+let menuBgc = document.createElement("div");
+menuBgc.className = "header--menu__bgc";
 
 navBtn.addEventListener("click", () => {
   navigation.classList.add("active");
@@ -36,31 +35,30 @@ navBtn.addEventListener("click", () => {
   head.appendChild(bgc);
 });
 
-for(let i = 0; i < backUp.length; i++) {
+for (let i = 0; i < backUp.length; i++) {
   backUp[i].addEventListener("click", () => {
-    for(let i = 0; i < navigation2.length; i++) {
-      navigation2[i].classList.remove('active2')
+    for (let i = 0; i < navigation2.length; i++) {
+      navigation2[i].classList.remove("active2");
     }
-    navigation.removeChild(menuBgc)
-  })
+    navigation.removeChild(menuBgc);
+  });
 }
 
-menuBgc.onclick = function() {
-  navigation2.forEach(el => {
-    el.classList.remove('active2')
-  })
-  navigation.removeChild(menuBgc)
-}
+menuBgc.onclick = function () {
+  navigation2.forEach((el) => {
+    el.classList.remove("active2");
+  });
+  navigation.removeChild(menuBgc);
+};
 
-bgc.onclick = function() {
-  navigation.classList.remove('active')
-  for(let i = 0; i < navigation2.length; i++) {
-    navigation2[i].classList.remove('active2')
+bgc.onclick = function () {
+  navigation.classList.remove("active");
+  for (let i = 0; i < navigation2.length; i++) {
+    navigation2[i].classList.remove("active2");
   }
-  head.removeChild(bgc)
-  document.body.style.overflow = "auto"
-  navigation.removeChild(menuBgc)
-}
+  head.removeChild(bgc);
+  document.body.style.overflow = "auto";
+};
 
 closeMenu.addEventListener("click", () => {
   navigation.classList.remove("active");
@@ -68,18 +66,18 @@ closeMenu.addEventListener("click", () => {
   head.removeChild(bgc);
 });
 
-for(let i = 0; i < navItem.length; i++) {
+for (let i = 0; i < navItem.length; i++) {
   navItem[i].addEventListener("click", () => {
-    let content = navItem[i].nextElementSibling
-    let content2 = navItem[i].previousElementSibling
-    navigation.appendChild(menuBgc)
-    if(content.classList.contains('active2')) {
-      content.classList.remove('active2')
+    let content = navItem[i].nextElementSibling;
+    let content2 = navItem[i].previousElementSibling;
+    navigation.appendChild(menuBgc);
+    if (content.classList.contains("active2")) {
+      content.classList.remove("active2");
     } else {
-      content2.classList.remove('active2')
-      content.classList.add('active2')
+      content2.classList.remove("active2");
+      content.classList.add("active2");
     }
-  })
+  });
 }
 //STORIES-----------------------------------------------------------
 
@@ -90,19 +88,203 @@ stories.forEach((store) => {
     modalBackground.classList.add("backgroundModal");
     const modal = document.createElement("div");
     modal.classList.add("modal");
-    const close = document.createElement("button");
-    close.classList.add("close");
-    close.innerText = "x";
-    modal.appendChild(close);
+    modal.innerHTML = ` <button class='close'><i class='fas fa-times'></i></button> 
+    <button class='next'>next</button><button class='prev'>prev</button>
+    <div class="testomonial-container">
+<div class="progress-bar"></div>
+<p class="testomonial">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor
+  nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventor
+</p>
+<div class="user">
+  <img src="./img/storiesIcom/JacobMccoy.png" alt="user" class="user-image" />
+  <div class="user-details">
+    <h4 class="username">Jacob Mccoy</h4>
+    <p class="role">Marketing</p>
+  </div>
+</div>
+</div>`;
+    // const close = document.createElement("button");
+    // close.classList.add("close");
+    // close.innerHTML = `<i class='fas fa-times'></i>`;
+    // modal.appendChild(close);
+    const close = modal.querySelector(".close");
     modalBackground.appendChild(modal);
     document.body.appendChild(modalBackground);
 
     setTimeout(() => {
       modalBackground.remove();
-    }, 2000);
+    }, 20000000);
     close.addEventListener("click", () => {
       modalBackground.remove();
     });
+
+    const testomonialContainer = modal.querySelector(".testomonial-container");
+    const testomonial = modal.querySelector(".testomonial");
+    const userImage = modal.querySelector(".user-image");
+    const username = modal.querySelector(".username");
+    const role = modal.querySelector(".role");
+    const progressB = modal.querySelector(".progress-bar");
+
+    const next = modal.querySelector(".next");
+    const prev = modal.querySelector(".prev");
+
+    const testomonials = [
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/small2.jpg",
+        name: "Marvin Hawkins",
+        position: "Basdf",
+        photos: "./img/storiesIcom/MarvinHawkins.png",
+        text: "consectetur adipisicing cere aut vitae, laudantium perferendis cupiditate.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        name: "Max Russell",
+        position: "Solder",
+        photos: "./img/storiesIcom/MaxRussell.png",
+        text: " possimus optio molestias praesentiuelit. N aut vitae, laudantium perferendis cupiditate.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/smallImg.jpg",
+        name: "Eduardo Miles",
+        position: "Fighter",
+        photos: "./img/storiesIcom/EduardoMiles.png",
+        text: " Lorem ipsum, dolor sit amet consectetue facere aut vitae, laudantium perferendis cupiditate.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/small2.jpg",
+        name: "Kyle Henry",
+        position: "Teacher",
+        photos: "./img/storiesIcom/KyleHenry.png",
+        text: "  consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sfacere aut vitae, laudantium perferendis cupiditate.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        name: "Shawn Lane",
+        position: "Cashier",
+        photos: "./img/storiesIcom/ShawnLane.png",
+        text: " consequuntur inventore possimus optio molestias praesentium. Lorem ipsufacere aut vitae, laudantium perferendis cupiditate.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/smallImg.jpg",
+        name: "Max Russell",
+        position: "Cashier",
+        photos: "./img/storiesIcom/EduardoMiles.png",
+        text: "   molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibusitate.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/small2.jpg",
+        name: "Eduardo Miles",
+        position: "Cashier",
+        photos: "./img/storiesIcom/JacobMccoy.png",
+        text: " inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        name: "Eduardo Miles",
+        position: "Cashier",
+        photos: "./img/storiesIcom/MarvinHawkins.png",
+        text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? ",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/smallImg.jpg",
+        name: "Esther Richards",
+        position: "Cashier",
+        photos: "./img/storiesIcom/MaxRussell.png",
+        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam ",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        backround: "./img/storiesIcom/small2.jpg",
+        name: "Esther Richards",
+        position: "Cashier",
+        photos: "./img/storiesIcom/ShawnLane.png",
+        text: "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas?.",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        name: "Gloria Steward",
+        position: "Cashier",
+        photos: "./img/storiesIcom/EduardoMiles.png",
+        text: "quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/smallImg.jpg",
+        name: "Max Russell",
+        position: "Cashier",
+        photos: "./img/storiesIcom/EduardoMiles.png",
+        text: "  quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        name: "Max Russell",
+        position: "Cashier",
+        photos: "./img/storiesIcom/KyleHenry.png",
+        text: " quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
+      },
+      {
+        width: "100%",
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        name: "Max Russell",
+        position: "Cashier",
+        photos: "./img/storiesIcom/JacobMccoy.png",
+        text: "  quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. ",
+      },
+    ];
+    let idx = 1;
+
+    next.addEventListener("click", () => {
+      const { name, position, photos, text } = testomonials[idx];
+      testomonial.innerHTML = text;
+      userImage.src = photos;
+      username.innerHTML = name;
+      role.innerHTML = position;
+      idx = idx + 1;
+      if (idx > testomonials.length -1) {
+        idx = 0;
+      }
+    });
+    prev.addEventListener("click", () => {
+      const { name, position, photos, text } = testomonials[idx];
+      testomonial.innerHTML = text;
+      userImage.src = photos;
+      username.innerHTML = name;
+      role.innerHTML = position;
+      idx = idx - 1;
+      if (idx < 0) {
+        idx = 0;
+      }
+    });
+
+    function updateTestomonial() {
+      const { name, position, photos, text, width } = testomonials[idx];
+
+      testomonial.innerHTML = text;
+      userImage.src = photos;
+      username.innerHTML = name;
+      role.innerHTML = position;
+      progressB.style.width = "100%";
+      idx++;
+
+      if (idx > testomonials.length - 1) {
+        idx = 0;
+      }
+    }
+
+    setInterval(updateTestomonial, 5000);
   });
 });
 
@@ -188,7 +370,8 @@ $(".logo-slider").slick({
       breakpoint: 600,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
+        rows: 3,
         infinite: true,
       },
     },
@@ -203,6 +386,7 @@ $(".logo-slider").slick({
     },
   ],
 });
+
 // CARDS
 const likes = document.querySelectorAll(".like");
 
@@ -214,6 +398,3 @@ likes.forEach((like) => {
     like.innerHTML = redLike;
   });
 });
-
-
-
