@@ -29,6 +29,8 @@ const backUp = document.querySelectorAll('.header__navigation--back')
 
 let bgc = document.createElement('div')
 bgc.className = 'bgc'
+let menuBgc = document.createElement('div')
+menuBgc.className = 'header--menu__bgc'
 
 
 navBtn.addEventListener("click", () => {
@@ -45,12 +47,18 @@ for(let i = 0; i < backUp.length; i++) {
   })
 }
 
+menuBgc.onclick = function() {
+  navigation2.forEach(el => {
+    el.classList.remove('active2')
+  })
+  navigation.removeChild(menuBgc)
+}
+
 bgc.onclick = function() {
   navigation.classList.remove('active')
   for(let i = 0; i < navigation2.length; i++) {
     navigation2[i].classList.remove('active2')
   }
-  navItem[3].classList.remove("active3")
   head.removeChild(bgc)
   document.body.style.overflow = "auto"
 }
@@ -65,6 +73,7 @@ for(let i = 0; i < navItem.length; i++) {
   navItem[i].addEventListener("click", () => {
     let content = navItem[i].nextElementSibling
     let content2 = navItem[i].previousElementSibling
+    navigation.appendChild(menuBgc)
     if(content.classList.contains('active2')) {
       content.classList.remove('active2')
     } else {
