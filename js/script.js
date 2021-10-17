@@ -88,7 +88,9 @@ stories.forEach((store) => {
     modalBackground.classList.add("backgroundModal");
     const modal = document.createElement("div");
     modal.classList.add("modal");
-    modal.innerHTML = ` <button class='close'><i class='fas fa-times'></i></button>  <div class="testomonial-container">
+    modal.innerHTML = ` <button class='close'><i class='fas fa-times'></i></button> 
+    <button class='next'>next</button><button class='prev'>prev</button>
+    <div class="testomonial-container">
 <div class="progress-bar"></div>
 <p class="testomonial">
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor
@@ -122,9 +124,14 @@ stories.forEach((store) => {
     const userImage = modal.querySelector(".user-image");
     const username = modal.querySelector(".username");
     const role = modal.querySelector(".role");
+    const progressB = modal.querySelector(".progress-bar");
+
+    const next = modal.querySelector(".next");
+    const prev = modal.querySelector(".prev");
 
     const testomonials = [
       {
+        width: "100%",
         backround: "./img/storiesIcom/small2.jpg",
         name: "Marvin Hawkins",
         position: "Basdf",
@@ -132,6 +139,7 @@ stories.forEach((store) => {
         text: "consectetur adipisicing cere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Max Russell",
         position: "Solder",
@@ -139,6 +147,7 @@ stories.forEach((store) => {
         text: " possimus optio molestias praesentiuelit. N aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/smallImg.jpg",
         name: "Eduardo Miles",
         position: "Fighter",
@@ -146,6 +155,7 @@ stories.forEach((store) => {
         text: " Lorem ipsum, dolor sit amet consectetue facere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/small2.jpg",
         name: "Kyle Henry",
         position: "Teacher",
@@ -153,6 +163,7 @@ stories.forEach((store) => {
         text: "  consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sfacere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Shawn Lane",
         position: "Cashier",
@@ -160,6 +171,7 @@ stories.forEach((store) => {
         text: " consequuntur inventore possimus optio molestias praesentium. Lorem ipsufacere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/smallImg.jpg",
         name: "Max Russell",
         position: "Cashier",
@@ -167,6 +179,7 @@ stories.forEach((store) => {
         text: "   molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibusitate.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/small2.jpg",
         name: "Eduardo Miles",
         position: "Cashier",
@@ -174,6 +187,7 @@ stories.forEach((store) => {
         text: " inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Eduardo Miles",
         position: "Cashier",
@@ -181,6 +195,7 @@ stories.forEach((store) => {
         text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? ",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/smallImg.jpg",
         name: "Esther Richards",
         position: "Cashier",
@@ -188,6 +203,7 @@ stories.forEach((store) => {
         text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam ",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/cardImgBrash.jpg",
         backround: "./img/storiesIcom/small2.jpg",
         name: "Esther Richards",
@@ -196,6 +212,7 @@ stories.forEach((store) => {
         text: "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas?.",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Gloria Steward",
         position: "Cashier",
@@ -203,6 +220,7 @@ stories.forEach((store) => {
         text: "quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/smallImg.jpg",
         name: "Max Russell",
         position: "Cashier",
@@ -210,6 +228,7 @@ stories.forEach((store) => {
         text: "  quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Max Russell",
         position: "Cashier",
@@ -217,6 +236,7 @@ stories.forEach((store) => {
         text: " quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
       },
       {
+        width: "100%",
         backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Max Russell",
         position: "Cashier",
@@ -226,14 +246,37 @@ stories.forEach((store) => {
     ];
     let idx = 1;
 
-    function updateTestomonial() {
+    next.addEventListener("click", () => {
       const { name, position, photos, text } = testomonials[idx];
+      testomonial.innerHTML = text;
+      userImage.src = photos;
+      username.innerHTML = name;
+      role.innerHTML = position;
+      idx = idx + 1;
+      if (idx > testomonials.length -1) {
+        idx = 0;
+      }
+    });
+    prev.addEventListener("click", () => {
+      const { name, position, photos, text } = testomonials[idx];
+      testomonial.innerHTML = text;
+      userImage.src = photos;
+      username.innerHTML = name;
+      role.innerHTML = position;
+      idx = idx - 1;
+      if (idx < 0) {
+        idx = 0;
+      }
+    });
+
+    function updateTestomonial() {
+      const { name, position, photos, text, width } = testomonials[idx];
 
       testomonial.innerHTML = text;
       userImage.src = photos;
       username.innerHTML = name;
       role.innerHTML = position;
-
+      progressB.style.width = "100%";
       idx++;
 
       if (idx > testomonials.length - 1) {

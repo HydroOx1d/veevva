@@ -222,6 +222,18 @@
   background-color: #fff;
   color: #000;
 }
+.next, .prev{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.next{
+  right: 5px;
+}
+.prev{
+  left: 5px;
+}
+
 
 /* MODAL WINDOW */
 .testomonial-container {
