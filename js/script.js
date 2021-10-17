@@ -44,6 +44,7 @@ for(let i = 0; i < backUp.length; i++) {
     for(let i = 0; i < navigation2.length; i++) {
       navigation2[i].classList.remove('active2')
     }
+    navigation.removeChild(menuBgc)
   })
 }
 
