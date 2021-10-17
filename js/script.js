@@ -194,15 +194,3 @@ likes.forEach((like) => {
 });
 
 
-const startingMinutes = 30
-const seconds = startingMinutes * 60
-const time = document.querySelectorAll('.time')
-
-setInterval(updateCount , 1000)
-
-function updateCount(){
-const minutes = Math.floor(seconds / 60)
-let secondT = seconds % 60
-
-time.innerHTML = ` ${minutes} : ${secondT}`
-}
