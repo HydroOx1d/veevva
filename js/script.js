@@ -193,7 +193,7 @@ stories.forEach((store) => {
         name: "Esther Richards",
         position: "Cashier",
         photos: "./img/storiesIcom/ShawnLane.png",
-        text: " etur adipisicing elit. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: " etur adipisicing elit. Dolor nesciuntt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
       },
       {
         name: "Gloria Steward",
