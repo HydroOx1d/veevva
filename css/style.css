@@ -225,33 +225,52 @@
   height: 150px;
   border: 1px solid #d6d6d6;
 }
-.logo-slider .item {
+.slick-list{
   height: 150px;
-  width: 150px !important;
-  display: flex !important;
+  display: flex;
   align-items: center;
-  justify-content: center;
+}
+.slick-track{
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+.item{
+  height: 150px;
+  display: flex !important;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: .5s ease;
+  
 }
-.logo-slider .item:hover {
-  border: 1px solid #7367f0;
-}
-.logo-slider .item:hover,
-.logo-slider .item a:hover {
-  color: #7367f0;
-}
-.logo-slider .item a {
-  text-decoration: none;
-  font-family: Gilroy;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
+.item p{
+  max-width: 125px;
+  width: 100%;
   text-align: center;
-  transition: 0.5s;
-  color: #212c42;
-  margin-top: 16px;
 }
+/* .logo-slider .item:hover {
+  border: 1px solid #7367f0;
+  color: #7367f0;
+} */
+
+.item a::before{
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+
+.item:hover{
+  border: 1px solid #5143eb;
+  color: #5143eb !important;
+  text-decoration: none;
+  font-style: normal
+}
+
 .slick-next::before,
 .slick-prev::before {
   color: #dbdbdb;
@@ -260,7 +279,7 @@
   transform: translateY(-50%);
   opacity: 1;
   z-index: 100;
-  transition: 0.5s ease;
+  transition: 0.6s ease;
 }
 .slick-prev::before {
   left: 2px;
@@ -271,7 +290,7 @@
 }
 .slick-next::before {
   right: 2px;
-}
+} 
 
 /* CARDS Совместные покупки ------------------------------------*/
 .product-cards {
@@ -1462,6 +1481,16 @@ a:hover {
   .time-like{
     width: 280px;
   }
+}
+@media (max-width: 600px) {
+ .slick-slider{
+   height: 440px !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   max-width: 1320px !important;
+ }
 }
 @media (max-width: 350px) {
   .time-like{
