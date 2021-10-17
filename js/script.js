@@ -56,9 +56,11 @@ bgc.onclick = function () {
   for (let i = 0; i < navigation2.length; i++) {
     navigation2[i].classList.remove("active2");
   }
+
   head.removeChild(bgc);
   document.body.style.overflow = "auto";
 };
+
 
 closeMenu.addEventListener("click", () => {
   navigation.classList.remove("active");
