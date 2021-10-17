@@ -58,7 +58,6 @@ bgc.onclick = function() {
     navigation2[i].classList.remove('active2')
   }
   head.removeChild(bgc)
-  navigation.removeChild(menuBgc)
   document.body.style.overflow = "auto"
 }
 
