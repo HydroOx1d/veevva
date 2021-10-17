@@ -56,11 +56,9 @@ bgc.onclick = function () {
   for (let i = 0; i < navigation2.length; i++) {
     navigation2[i].classList.remove("active2");
   }
-
   head.removeChild(bgc);
   document.body.style.overflow = "auto";
 };
-
 
 closeMenu.addEventListener("click", () => {
   navigation.classList.remove("active");
@@ -90,14 +88,11 @@ stories.forEach((store) => {
     modalBackground.classList.add("backgroundModal");
     const modal = document.createElement("div");
     modal.classList.add("modal");
-    modal.innerHTML = ` <button class='close'><i class='fas fa-times'></i></button><div class="testomonial-container">
+    modal.innerHTML = ` <button class='close'><i class='fas fa-times'></i></button>  <div class="testomonial-container">
 <div class="progress-bar"></div>
 <p class="testomonial">
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor
-  nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore
-  possimus optio molestias praesentium. Lorem ipsum, dolor sit amet
-  consectetur adipisicing elit. Necessitatibus non maxime enim voluptas?
-  Dolore facere aut vitae, laudantium perferendis cupiditate.
+  nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventor
 </p>
 <div class="user">
   <img src="./img/storiesIcom/JacobMccoy.png" alt="user" class="user-image" />
@@ -111,7 +106,7 @@ stories.forEach((store) => {
     // close.classList.add("close");
     // close.innerHTML = `<i class='fas fa-times'></i>`;
     // modal.appendChild(close);
-    const close = modal.querySelector('.close')
+    const close = modal.querySelector(".close");
     modalBackground.appendChild(modal);
     document.body.appendChild(modalBackground);
 
@@ -130,94 +125,103 @@ stories.forEach((store) => {
 
     const testomonials = [
       {
-        name: "Anvar",
-        position: "Marketing",
-        photos: "./img/JacobMccoy.png",
-        text: " Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
-      },
-      {
+        backround: "./img/storiesIcom/small2.jpg",
         name: "Marvin Hawkins",
         position: "Basdf",
         photos: "./img/storiesIcom/MarvinHawkins.png",
-        text: "consectetur adipisicing elit. Dolor nesciunt, ipsam assumenda asperiores im voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: "consectetur adipisicing cere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Max Russell",
         position: "Solder",
         photos: "./img/storiesIcom/MaxRussell.png",
-        text: " Lorem ipsum dolor sit, amet consec asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: " possimus optio molestias praesentiuelit. N aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        backround: "./img/storiesIcom/smallImg.jpg",
         name: "Eduardo Miles",
         position: "Fighter",
         photos: "./img/storiesIcom/EduardoMiles.png",
-        text: " dipisicing elit. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: " Lorem ipsum, dolor sit amet consectetue facere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        backround: "./img/storiesIcom/small2.jpg",
         name: "Kyle Henry",
         position: "Teacher",
         photos: "./img/storiesIcom/KyleHenry.png",
-        text: " Lorem ipsum dolor sit, olor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: "  consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sfacere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Shawn Lane",
         position: "Cashier",
         photos: "./img/storiesIcom/ShawnLane.png",
-        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: " consequuntur inventore possimus optio molestias praesentium. Lorem ipsufacere aut vitae, laudantium perferendis cupiditate.",
       },
       {
+        backround: "./img/storiesIcom/smallImg.jpg",
         name: "Max Russell",
         position: "Cashier",
         photos: "./img/storiesIcom/EduardoMiles.png",
-        text: " dipisicing elit. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: "   molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibusitate.",
       },
       {
+        backround: "./img/storiesIcom/small2.jpg",
         name: "Eduardo Miles",
         position: "Cashier",
         photos: "./img/storiesIcom/JacobMccoy.png",
-        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: " inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
       },
       {
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Eduardo Miles",
         position: "Cashier",
         photos: "./img/storiesIcom/MarvinHawkins.png",
-        text: " it. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? ",
       },
       {
+        backround: "./img/storiesIcom/smallImg.jpg",
         name: "Esther Richards",
         position: "Cashier",
         photos: "./img/storiesIcom/MaxRussell.png",
-        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam .",
+        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam ",
       },
       {
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
+        backround: "./img/storiesIcom/small2.jpg",
         name: "Esther Richards",
         position: "Cashier",
         photos: "./img/storiesIcom/ShawnLane.png",
-        text: " etur adipisicing elit. Dolor nesciuntt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas?.",
       },
       {
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Gloria Steward",
         position: "Cashier",
         photos: "./img/storiesIcom/EduardoMiles.png",
-        text: "t, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: "quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
       },
       {
+        backround: "./img/storiesIcom/smallImg.jpg",
         name: "Max Russell",
         position: "Cashier",
         photos: "./img/storiesIcom/EduardoMiles.png",
-        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae,te.",
+        text: "  quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
       },
       {
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Max Russell",
         position: "Cashier",
         photos: "./img/storiesIcom/KyleHenry.png",
-        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesc? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: " quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. .",
       },
       {
+        backround: "./img/storiesIcom/cardImgBrash.jpg",
         name: "Max Russell",
         position: "Cashier",
         photos: "./img/storiesIcom/JacobMccoy.png",
-        text: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor nesciunt, ipsam assumenda asperiores quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus non maxime enim voluptas? Dolore facere aut vitae, laudantium perferendis cupiditate.",
+        text: "  quibusdam consequuntur inventore possimus optio molestias praesentium. Lorem ipsum, dolor sit amet consectetur adipisicing elit. ",
       },
     ];
     let idx = 1;

@@ -231,6 +231,11 @@
   max-width: 768px;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
 }
 .fa-quote {
   color: rgba(255, 255, 255, 0.3);
@@ -247,11 +252,15 @@
 .testomonial {
   line-height: 28px;
   text-align: justify;
+  font-family: Gilroy;
+  text-align: center;
 }
 .user {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 .user .user-img {
   border-radius: 50%;
@@ -282,12 +291,18 @@
     transform: scaleX(0);
   }
 }
-@media (max-width: 768px) {
-  .fa.fa-quote {
-    display: none;
+@media (max-width: 800px) {
+  .progress-bar{
+    margin-top: 40px;
+  }
+  .modal{
+    height: 400px;
+  }
+  .testomonial {
+    line-height: 18px;
   }
   .testomonial-container {
-    padding: 20px 30px;
+    padding: 10px 20px;
   }
 }
 
@@ -1584,7 +1599,7 @@ a:hover {
     right: 5px;
   }
   .modal{
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
   }
 }
