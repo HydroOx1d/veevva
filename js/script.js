@@ -59,6 +59,7 @@ bgc.onclick = function() {
   }
   head.removeChild(bgc)
   document.body.style.overflow = "auto"
+  navigation.removeChild(menuBgc)
 }
 
 closeMenu.addEventListener("click", () => {
