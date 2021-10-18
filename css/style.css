@@ -689,11 +689,9 @@ left: 0;
   font-family: "Roboto-Regular";
   font-size: 16px;
   cursor: pointer;
+  z-index: 100;
 }
 
-.header__navigation--item:hover {
-  opacity: .5;
-}
 
 .header__navigation--close {
   display: none;
@@ -787,6 +785,16 @@ left: 0;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.header__navigation--menu2:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  left: 0;
+  top: 0;
+  background-color: #6e3dc8;
 }
 
 .header--menu__bgc {
@@ -1231,7 +1239,7 @@ a:hover {
   position: absolute;
   left: -40%;
   background: #6e3dc8;
-  width: 180%;
+  width: 175%;
   height: 100%;
   z-index: -1;
 }
