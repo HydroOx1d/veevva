@@ -253,7 +253,7 @@ stories.forEach((store) => {
       username.innerHTML = name;
       role.innerHTML = position;
       idx = idx + 1;
-      if (idx > testomonials.length -1) {
+      if (idx > testomonials.length - 1) {
         idx = 0;
       }
     });
@@ -342,45 +342,70 @@ function goToSlide(slideNumber) {
 }
 
 // CAROUSEL------------------------------------------------------------------------
-$(".logo-slider").slick({
-  slidesToShow: 9,
-  slidesToScroll: 1,
+// $(".logo-slider").slick({
+//   slidesToShow: 9,
+//   slidesToScroll: 1,
+//   arrows: true,
+//   autoplay: true,
+//   autoplaySpeed: 2000,
+//   infinity: true,
+//   responsive: [
+//     {
+//       breakpoint: 1094,
+//       settings: {
+//         slidesToShow: 6,
+//         slidesToScroll: 3,
+//         infinite: true,
+//       },
+//     },
+//     {
+//       breakpoint: 800,
+//       settings: {
+//         slidesToShow: 4,
+//         slidesToScroll: 2,
+//         infinite: true,
+//       },
+//     },
+//     {
+//       breakpoint: 600,
+//       settings: {
+//         rows: 2,
+//         slidesToShow: 3,
+//         slidesToScroll: 1,
+//         infinite: true,
+//       },
+//     },
+
+//     {
+//       breakpoint: 400,
+//       settings: {
+//         rows:2,
+//         slidesToShow: 2,
+//         slidesToScroll: 3,
+//         infinite: true,
+//       },
+//     },
+//   ],
+// });
+
+$("#slick1").slick({
+  button: true,
   arrows: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 3,
+  slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 1000,
   infinity: true,
+  variableWidth: true,
   responsive: [
-    {
-      breakpoint: 1094,
-      settings: {
-        slidesToShow: 6,
-        slidesToScroll: 3,
-        infinite: true,
-      },
-    },
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        infinite: true,
-      },
-    },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        rows: 3,
-        infinite: true,
-      },
-    },
-
-    {
-      breakpoint: 400,
-      settings: {
+        rows: 2,
         slidesToShow: 2,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
         infinite: true,
       },
     },
@@ -388,13 +413,24 @@ $(".logo-slider").slick({
 });
 
 // CARDS
-const likes = document.querySelectorAll(".like");
+const likeImg = document.querySelectorAll(".like-img");
 
-likes.forEach((like) => {
-  like.addEventListener("click", () => {
-    const redLike = `<div class="like-img-container">
-    <img src="./img/cardImg/like.png" alt=""/>
-  </div>`;
-    like.innerHTML = redLike;
+likeImg.forEach((like) => {
+  like.addEventListener("mouseover", () => {
+    like.src = "./img/cardImg/like.png";
   });
+  like.addEventListener("mouseout",()=>{
+    like.src = "./img/cardImg/likeIcon.svg"
+  })
 });
+
+const likeImgBlack = document.querySelectorAll('.like-img-black')
+
+likeImgBlack.forEach((likeBlack)=>{
+likeBlack.addEventListener('mouseover', ()=>{
+  likeBlack.src = "./img/cardImg/like.png"
+})
+likeBlack.addEventListener('mouseout', ()=>{
+  likeBlack.src = "./img/bestsellerImg/blackHeard.png"
+})
+})
