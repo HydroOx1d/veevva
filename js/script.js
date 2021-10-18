@@ -22,6 +22,7 @@ const head = document.querySelector(".header");
 const closeMenu = document.querySelector(".header__navigation--close");
 const navigation2 = document.querySelectorAll(".header__navigation--menu2");
 const navItem = document.querySelectorAll(".header__navigation--item");
+const navImg = document.querySelectorAll(".header__navigation--item img");
 const backUp = document.querySelectorAll(".header__navigation--back");
 
 let bgc = document.createElement("div");
@@ -41,6 +42,13 @@ for (let i = 0; i < backUp.length; i++) {
       navigation2[i].classList.remove("active2");
     }
     navigation.removeChild(menuBgc);
+
+    navItem.forEach(el => {
+      el.classList.remove('active3')
+    })
+    navImg.forEach(el => {
+      el.style.filter = 'contrast(0)'
+    })
   });
 }
 
@@ -49,6 +57,12 @@ menuBgc.onclick = function () {
     el.classList.remove("active2");
   });
   navigation.removeChild(menuBgc);
+  navItem.forEach(el => {
+    el.classList.remove('active3')
+  })
+  navImg.forEach(el => {
+    el.style.filter = 'contrast(0)'
+  })
 };
 
 bgc.onclick = function () {
@@ -58,12 +72,26 @@ bgc.onclick = function () {
   }
   head.removeChild(bgc);
   document.body.style.overflow = "auto";
+  navigation.removeChild(menuBgc)
+  navItem.forEach(el => {
+    el.classList.remove('active3')
+  })
+  navImg.forEach(el => {
+    el.style.filter = 'contrast(0)'
+  })
 };
 
 closeMenu.addEventListener("click", () => {
   navigation.classList.remove("active");
   document.body.style.overflow = "auto";
   head.removeChild(bgc);
+
+  navItem.forEach(el => {
+    el.classList.remove('active3')
+  })
+  navImg.forEach(el => {
+    el.style.filter = 'contrast(0)'
+  })
 });
 
 for (let i = 0; i < navItem.length; i++) {
@@ -73,12 +101,22 @@ for (let i = 0; i < navItem.length; i++) {
     navigation.appendChild(menuBgc);
     if (content.classList.contains("active2")) {
       content.classList.remove("active2");
+      navItem[i].classList.remove('active3')
+      navigation.removeChild(menuBgc)
+      navImg.forEach(el => {
+        el.style.filter = 'contrast(0)'
+      })
     } else {
       content2.classList.remove("active2");
       content.classList.add("active2");
+      navItem[i].classList.add("active3")
+      navImg.forEach(el => {
+        el.style.filter = 'contrast(10)'
+      })
     }
   });
 }
+
 //STORIES-----------------------------------------------------------
 
 const stories = document.querySelectorAll(".stories");
