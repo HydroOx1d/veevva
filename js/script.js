@@ -113,9 +113,11 @@ for (let i = 0; i < navItem.length; i++) {
       navImg.forEach((el) => {
         el.style.filter = "contrast(10)";
       });
+
     }
   });
 }
+
 
 //STORIES-----------------------------------------------------------
 
