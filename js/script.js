@@ -113,11 +113,9 @@ for (let i = 0; i < navItem.length; i++) {
       navImg.forEach((el) => {
         el.style.filter = "contrast(10)";
       });
-
     }
   });
 }
-
 
 //STORIES-----------------------------------------------------------
 
@@ -158,6 +156,7 @@ stories.forEach((store) => {
     }, 20000000);
     close.addEventListener("click", () => {
       modalBackground.remove();
+      reloadScrollBars()
     });
 
     const testomonialContainer = modal.querySelector(".testomonial-container");
@@ -324,6 +323,18 @@ stories.forEach((store) => {
         idx = 0;
       }
     }
+
+    function reloadScrollBars() {
+      document.documentElement.style.overflow = "auto"; // firefox, chrome
+      document.body.scroll = "yes"; // ie only
+    }
+
+    function unloadScrollBars() {
+      document.documentElement.style.overflow = "hidden"; // firefox, chrome
+      document.body.scroll = "no"; // ie only
+    }
+    unloadScrollBars()
+ 
 
     setInterval(updateTestomonial, 5000);
   });
