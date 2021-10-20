@@ -22,6 +22,7 @@ const head = document.querySelector(".header");
 const closeMenu = document.querySelector(".header__navigation--close");
 const navigation2 = document.querySelectorAll(".header__navigation--menu2");
 const navItem = document.querySelectorAll(".header__navigation--item");
+const navImg = document.querySelectorAll(".header__navigation--item img");
 const backUp = document.querySelectorAll(".header__navigation--back");
 
 let bgc = document.createElement("div");
@@ -41,6 +42,13 @@ for (let i = 0; i < backUp.length; i++) {
       navigation2[i].classList.remove("active2");
     }
     navigation.removeChild(menuBgc);
+
+    navItem.forEach((el) => {
+      el.classList.remove("active3");
+    });
+    navImg.forEach((el) => {
+      el.style.filter = "contrast(0)";
+    });
   });
 }
 
@@ -49,6 +57,12 @@ menuBgc.onclick = function () {
     el.classList.remove("active2");
   });
   navigation.removeChild(menuBgc);
+  navItem.forEach((el) => {
+    el.classList.remove("active3");
+  });
+  navImg.forEach((el) => {
+    el.style.filter = "contrast(0)";
+  });
 };
 
 bgc.onclick = function () {
@@ -58,12 +72,26 @@ bgc.onclick = function () {
   }
   head.removeChild(bgc);
   document.body.style.overflow = "auto";
+  navigation.removeChild(menuBgc);
+  navItem.forEach((el) => {
+    el.classList.remove("active3");
+  });
+  navImg.forEach((el) => {
+    el.style.filter = "contrast(0)";
+  });
 };
 
 closeMenu.addEventListener("click", () => {
   navigation.classList.remove("active");
   document.body.style.overflow = "auto";
   head.removeChild(bgc);
+
+  navItem.forEach((el) => {
+    el.classList.remove("active3");
+  });
+  navImg.forEach((el) => {
+    el.style.filter = "contrast(0)";
+  });
 });
 
 for (let i = 0; i < navItem.length; i++) {
@@ -73,12 +101,22 @@ for (let i = 0; i < navItem.length; i++) {
     navigation.appendChild(menuBgc);
     if (content.classList.contains("active2")) {
       content.classList.remove("active2");
+      navItem[i].classList.remove("active3");
+      navigation.removeChild(menuBgc);
+      navImg.forEach((el) => {
+        el.style.filter = "contrast(0)";
+      });
     } else {
       content2.classList.remove("active2");
       content.classList.add("active2");
+      navItem[i].classList.add("active3");
+      navImg.forEach((el) => {
+        el.style.filter = "contrast(10)";
+      });
     }
   });
 }
+
 //STORIES-----------------------------------------------------------
 
 const stories = document.querySelectorAll(".stories");
@@ -89,7 +127,8 @@ stories.forEach((store) => {
     const modal = document.createElement("div");
     modal.classList.add("modal");
     modal.innerHTML = ` <button class='close'><i class='fas fa-times'></i></button> 
-    <button class='next'>next</button><button class='prev'>prev</button>
+    <button class='next-st'> <img src="./img/caruselIcon/next.svg" alt=""></button>
+    <button class='prev-st'> <img src="./img/caruselIcon/leftDirection.svg" alt=""> </button>
     <div class="testomonial-container">
 <div class="progress-bar"></div>
 <p class="testomonial">
@@ -117,6 +156,7 @@ stories.forEach((store) => {
     }, 20000000);
     close.addEventListener("click", () => {
       modalBackground.remove();
+      reloadScrollBars()
     });
 
     const testomonialContainer = modal.querySelector(".testomonial-container");
@@ -126,8 +166,8 @@ stories.forEach((store) => {
     const role = modal.querySelector(".role");
     const progressB = modal.querySelector(".progress-bar");
 
-    const next = modal.querySelector(".next");
-    const prev = modal.querySelector(".prev");
+    const next = modal.querySelector(".next-st");
+    const prev = modal.querySelector(".prev-st");
 
     const testomonials = [
       {
@@ -284,6 +324,18 @@ stories.forEach((store) => {
       }
     }
 
+    function reloadScrollBars() {
+      document.documentElement.style.overflow = "auto"; // firefox, chrome
+      document.body.scroll = "yes"; // ie only
+    }
+
+    function unloadScrollBars() {
+      document.documentElement.style.overflow = "hidden"; // firefox, chrome
+      document.body.scroll = "no"; // ie only
+    }
+    unloadScrollBars()
+ 
+
     setInterval(updateTestomonial, 5000);
   });
 });
@@ -342,51 +394,6 @@ function goToSlide(slideNumber) {
 }
 
 // CAROUSEL------------------------------------------------------------------------
-// $(".logo-slider").slick({
-//   slidesToShow: 9,
-//   slidesToScroll: 1,
-//   arrows: true,
-//   autoplay: true,
-//   autoplaySpeed: 2000,
-//   infinity: true,
-//   responsive: [
-//     {
-//       breakpoint: 1094,
-//       settings: {
-//         slidesToShow: 6,
-//         slidesToScroll: 3,
-//         infinite: true,
-//       },
-//     },
-//     {
-//       breakpoint: 800,
-//       settings: {
-//         slidesToShow: 4,
-//         slidesToScroll: 2,
-//         infinite: true,
-//       },
-//     },
-//     {
-//       breakpoint: 600,
-//       settings: {
-//         rows: 2,
-//         slidesToShow: 3,
-//         slidesToScroll: 1,
-//         infinite: true,
-//       },
-//     },
-
-//     {
-//       breakpoint: 400,
-//       settings: {
-//         rows:2,
-//         slidesToShow: 2,
-//         slidesToScroll: 3,
-//         infinite: true,
-//       },
-//     },
-//   ],
-// });
 
 $("#slick1").slick({
   button: true,
@@ -411,6 +418,14 @@ $("#slick1").slick({
     },
   ],
 });
+$("#stories-container").slick({
+  slidesToShow: 14,
+  slidesToScroll: 2,
+  arrows: true,
+  button: false,
+  variableWidth: true,
+  infinity: true,
+});
 
 // CARDS
 const likeImg = document.querySelectorAll(".like-img");
@@ -419,18 +434,18 @@ likeImg.forEach((like) => {
   like.addEventListener("mouseover", () => {
     like.src = "./img/cardImg/like.png";
   });
-  like.addEventListener("mouseout",()=>{
-    like.src = "./img/cardImg/likeIcon.svg"
-  })
+  like.addEventListener("mouseout", () => {
+    like.src = "./img/cardImg/likeIcon.svg";
+  });
 });
 
-const likeImgBlack = document.querySelectorAll('.like-img-black')
+const likeImgBlack = document.querySelectorAll(".like-img-black");
 
-likeImgBlack.forEach((likeBlack)=>{
-likeBlack.addEventListener('mouseover', ()=>{
-  likeBlack.src = "./img/cardImg/like.png"
-})
-likeBlack.addEventListener('mouseout', ()=>{
-  likeBlack.src = "./img/bestsellerImg/blackHeard.png"
-})
-})
+likeImgBlack.forEach((likeBlack) => {
+  likeBlack.addEventListener("mouseover", () => {
+    likeBlack.src = "./img/cardImg/like.png";
+  });
+  likeBlack.addEventListener("mouseout", () => {
+    likeBlack.src = "./img/bestsellerImg/blackHeard.png";
+  });
+});
