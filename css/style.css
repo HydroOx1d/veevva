@@ -1130,7 +1130,7 @@
   width: 100%;
 }
 .bottom-img-container {
-  max-width: 315px;
+  max-width: 320px;
   width: 100%;
 }
 .bottom-img-container img {
@@ -1695,8 +1695,9 @@ a:hover {
     margin: auto;
     margin-top: 30px;
   }
-  .container {
-    max-width: 1364px;
+  .bestsellers {
+    max-width: 946px;
+    margin: auto;
   }
   .card {
     max-width: 308px;
@@ -1709,10 +1710,19 @@ a:hover {
 }
 
 @media (max-width: 1200px) {
-  .bestsellers {
+  .bottom-small-products {
     flex-direction: column;
-    align-items: center;
+    max-width: 308px;
+    margin-top: 0;
   }
+  .small-products {
+    max-width: 308px;
+  }
+
+  .big-product {
+    max-width: 636px;
+  }
+
   .new-vevva-display {
     display: none;
   }
@@ -1723,8 +1733,32 @@ a:hover {
   .introduction-card {
     max-width: 708px;
   }
+}
+
+@media (max-width: 1020px) {
+  .bestsellers {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
   .bottom-small-products {
-    justify-content: center;
+    flex-direction: row;
+    max-width: 708px;
+    margin-top: 0;
+  }
+  .small-products {
+    max-width: 708px;
+  }
+  .big-product {
+    max-width: 708px;
+  }
+  .bottom-img-container{
+    max-width: 346px;
+    width: 100%;
+  }
+  .big-img-container {
+max-width: 708px;
+width: 100%;
   }
 }
 
@@ -1783,12 +1817,14 @@ a:hover {
     text-align: center;
     height: 250px;
   }
-}
-@media (max-width: 600px) {
+  .bestsellers-description {
+    font-size: 12px;
+  }
   .slick-wrapper {
     height: 400px;
   }
 }
+
 @media (max-width: 570px) {
   .slide-text b {
     font-size: 20px;
