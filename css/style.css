@@ -110,7 +110,7 @@
   border: none;
   outline: none;
   border-radius: 50%;
-  z-index: 100;
+  z-index: 1;
 }
 .up-btn {
   top: 150px;
@@ -405,6 +405,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .slick-next {
@@ -1376,7 +1377,7 @@ a:hover {
   }
   .header__navigation--menu2 {
     width: 50%;
-    left: 40%;
+    left: 42%;
     padding: 80px 40px;
   }
 
@@ -1429,7 +1430,8 @@ a:hover {
     margin-top: 60px;
   }
   .header__navigation--menu2 {
-    left: 47%;
+    left: 43.5%;
+    width: 100%;
   }
   .saleshits__nav {
     padding: 20px 0;
@@ -1603,7 +1605,7 @@ a:hover {
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .header__navigation--menu {
-    padding: 80px 50px;
+    padding: 80px 40px;
     height: 750px;
     line-height: 3;
   }
