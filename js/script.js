@@ -402,7 +402,7 @@ $("#slick1").slick({
   slidesToShow: 1,
   slidesToScroll: 3,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   autoplaySpeed: 1000,
   infinity: true,
   variableWidth: true,
