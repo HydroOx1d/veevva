@@ -103,16 +103,12 @@ for (let i = 0; i < navItem.length; i++) {
       content.classList.remove("active2");
       navItem[i].classList.remove("active3");
       navigation.removeChild(menuBgc);
-      navImg.forEach((el) => {
-        el.style.filter = "contrast(0)";
-      });
+      navImg[i].style.filter = "contrast(0)";
     } else {
       content2.classList.remove("active2");
       content.classList.add("active2");
       navItem[i].classList.add("active3");
-      navImg.forEach((el) => {
-        el.style.filter = "contrast(10)";
-      });
+      navImg[i].style.filter = "contrast(10)";
     }
   });
 }
