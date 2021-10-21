@@ -134,7 +134,6 @@
   justify-content: space-between;
   align-items: center;
   grid-gap: 30px;
-  overflow: hidden;
 }
 .stories-container .slick-list {
   display: flex;
@@ -148,7 +147,7 @@
 } */
 .stories-container .slick-next,
 .stories-container .slick-prev {
-  left: -50px;
+  left: -500px;
 }
 .stories-container .slick-slide.slick-cloned {
   max-width: 500px !important;
@@ -163,6 +162,8 @@
   align-items: center;
   text-align: center;
   width: 87.2px !important;
+  height: 100px;
+  overflow: hidden;
 }
 .orange-border-img {
   margin: auto;
@@ -391,92 +392,92 @@
 }
 /* photo colors */
 .one{
-  background-image: url('../img/caruselIcon/1.png');
+  background-image: url('../img/caruselIcon/1.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .one:hover{
-  background-image: url('../img/caruselIcon/1Color.png') !important;
+  background-image: url('../img/caruselIcon/1Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .two{
-  background-image: url('../img/caruselIcon/2.png');
+  background-image: url('../img/caruselIcon/2.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .two:hover{
-  background-image: url('../img/caruselIcon/2Color.png') !important;
+  background-image: url('../img/caruselIcon/2Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .three{
-  background-image: url('../img/caruselIcon/3.png');
+  background-image: url('../img/caruselIcon/3.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .three:hover{
-  background-image: url('../img/caruselIcon/3Color.png') !important;
+  background-image: url('../img/caruselIcon/3Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .four{
-  background-image: url('../img/caruselIcon/1.png');
+  background-image: url('../img/caruselIcon/1.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .four:hover{
-  background-image: url('../img/caruselIcon/1Color.png') !important;
+  background-image: url('../img/caruselIcon/1Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .five{
-  background-image: url('../img/caruselIcon/5.png');
+  background-image: url('../img/caruselIcon/5.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .five:hover{
-  background-image: url('../img/caruselIcon/5Color.png') !important;
+  background-image: url('../img/caruselIcon/5Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .six{
-  background-image: url('../img/caruselIcon/6.png');
+  background-image: url('../img/caruselIcon/6.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .six:hover{
-  background-image: url('../img/caruselIcon/6Color.png') !important;
+  background-image: url('../img/caruselIcon/6Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .seven{
-  background-image: url('../img/caruselIcon/7.png');
+  background-image: url('../img/caruselIcon/7.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .seven:hover{
-  background-image: url('../img/caruselIcon/7Color.png') !important;
+  background-image: url('../img/caruselIcon/7Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .eight{
-  background-image: url('../img/caruselIcon/8.png');
+  background-image: url('../img/caruselIcon/8.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .eight:hover{
-  background-image: url('../img/caruselIcon/8Color.png') !important;
+  background-image: url('../img/caruselIcon/8Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
 .nine{
-  background-image: url('../img/caruselIcon/9.png');
+  background-image: url('../img/caruselIcon/9.svg');
   background-repeat: no-repeat;
   background-position: 50% 33%;
 }
 .nine:hover{
-  background-image: url('../img/caruselIcon/9Color.png') !important;
+  background-image: url('../img/caruselIcon/9Color.svg') !important;
   background-repeat: no-repeat !important;
   background-position: 50% 33% !important;
 }
@@ -540,6 +541,7 @@
   background-image: url("../img/caruselIcon/prevCOLOR.png");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   width: 40px;
   height: 40px;
 }
@@ -547,6 +549,7 @@
   background-image: url("../img/caruselIcon/NextColor.png");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   width: 40px;
   height: 40px;
 }
@@ -1996,6 +1999,12 @@ a:hover {
   }
   .slick-wrapper {
     height: 400px;
+  }
+}
+
+@media (max-width: 580px) {
+  .stories-container{
+    padding-top: 20px;
   }
 }
 
