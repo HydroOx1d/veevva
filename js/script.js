@@ -31,9 +31,19 @@ let menuBgc = document.createElement("div");
 menuBgc.className = "header--menu__bgc";
 
 navBtn.addEventListener("click", () => {
-  navigation.classList.add("active");
-  document.body.style.overflow = "hidden";
-  head.appendChild(bgc);
+  navigation.classList.toggle("active");
+  for(let i = 0; i < navItem.length; i++) {
+    navItem[i].classList.remove('active3')
+    navImg[i].style.filter = 'contrast(0)'
+    navigation2[i].classList.remove('active2')
+  }
+  if(navigation.classList.contains('active')) {
+    head.appendChild(bgc);
+    document.body.style.overflow = "hidden";
+  } else {
+    head.removeChild(bgc);
+    document.body.style.overflow = "visible";
+  }
 });
 
 for (let i = 0; i < backUp.length; i++) {
@@ -81,18 +91,18 @@ bgc.onclick = function () {
   });
 };
 
-closeMenu.addEventListener("click", () => {
-  navigation.classList.remove("active");
-  document.body.style.overflow = "auto";
-  head.removeChild(bgc);
-
-  navItem.forEach((el) => {
-    el.classList.remove("active3");
-  });
-  navImg.forEach((el) => {
-    el.style.filter = "contrast(0)";
-  });
-});
+// closeMenu.addEventListener("click", () => {
+//   navigation.classList.remove("active");
+//   document.body.style.overflow = "auto";
+//   head.removeChild(bgc);
+//
+//   navItem.forEach((el) => {
+//     el.classList.remove("active3");
+//   });
+//   navImg.forEach((el) => {
+//     el.style.filter = "contrast(0)";
+//   });
+// });
 
 for (let i = 0; i < navItem.length; i++) {
   navItem[i].addEventListener("click", () => {
@@ -113,6 +123,13 @@ for (let i = 0; i < navItem.length; i++) {
   });
 }
 
+// let notifff = document.querySelector('.header__acc--notif')
+// notifff.addEventListener("mouseenter", () => {
+//   notifff.innerHTML = `<img src="./img/icons/heart.svg"/>`
+// })
+// notifff.addEventListener("mouseleave", () => {
+//   notifff.innerHTML = `<img src="./img/icons/bell.svg"/>`
+// })
 //STORIES-----------------------------------------------------------
 
 const stories = document.querySelectorAll(".stories");
