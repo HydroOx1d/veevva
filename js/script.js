@@ -40,9 +40,11 @@ navBtn.addEventListener("click", () => {
   if(navigation.classList.contains('active')) {
     head.appendChild(bgc);
     document.body.style.overflow = "hidden";
+    navBtn.innerHTML = `<img class="header__navigation--close2" src="./img/icons/close.svg" alt="" />`
   } else {
     head.removeChild(bgc);
     document.body.style.overflow = "visible";
+    navBtn.innerHTML = `<img src="./img/icons/menu.svg" alt="" /> <a>Все категории</a>`
   }
 });
 
@@ -82,6 +84,7 @@ bgc.onclick = function () {
   }
   head.removeChild(bgc);
   document.body.style.overflow = "auto";
+  navBtn.innerHTML = `<img src="./img/icons/menu.svg" alt="" /> <a>Все категории</a>`
   navigation.removeChild(menuBgc);
   navItem.forEach((el) => {
     el.classList.remove("active3");
@@ -123,13 +126,36 @@ for (let i = 0; i < navItem.length; i++) {
   });
 }
 
-// let notifff = document.querySelector('.header__acc--notif')
-// notifff.addEventListener("mouseenter", () => {
-//   notifff.innerHTML = `<img src="./img/icons/heart.svg"/>`
-// })
-// notifff.addEventListener("mouseleave", () => {
-//   notifff.innerHTML = `<img src="./img/icons/bell.svg"/>`
-// })
+let notifff = document.querySelector('.header__acc--notif')
+notifff.addEventListener("mouseenter", () => {
+  notifff.innerHTML = `<img src="./img/icons/bell_orange.svg"/>`
+})
+notifff.addEventListener("mouseleave", () => {
+  notifff.innerHTML = `<img src="./img/icons/bell.svg"/>`
+})
+let heart = document.querySelector('.header__acc--whishlist')
+heart.addEventListener("mouseenter", () => {
+  heart.innerHTML = `<img src="./img/icons/heart_orange.svg"/>`
+})
+heart.addEventListener("mouseleave", () => {
+  heart.innerHTML = `<img src="./img/icons/heart.svg"/>`
+})
+let market = document.querySelector('.header__acc--basket')
+market.addEventListener("mouseenter", () => {
+  market.innerHTML = `<img src="./img/icons/supermarket_orange.svg"/>`
+})
+market.addEventListener("mouseleave", () => {
+  market.innerHTML = `<img src="./img/icons/supermarket.svg"/>`
+})
+
+let users = document.querySelector('.header__acc--log')
+users.addEventListener("mouseenter", () => {
+  users.innerHTML = `<img src="./img/icons/user_orange.svg"/>`
+})
+users.addEventListener("mouseleave", () => {
+  users.innerHTML = `<img src="./img/icons/user.svg"/>`
+})
+
 //STORIES-----------------------------------------------------------
 
 const stories = document.querySelectorAll(".stories");
