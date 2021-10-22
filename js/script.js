@@ -126,34 +126,34 @@ for (let i = 0; i < navItem.length; i++) {
   });
 }
 
-let notifff = document.querySelector('.header__acc--notif')
+let notifff = document.querySelector('.header__acc--notif img')
 notifff.addEventListener("mouseenter", () => {
-  notifff.innerHTML = `<img src="./img/icons/bell_orange.svg"/>`
+  notifff.src = './img/icons/bell_orange.svg'
 })
 notifff.addEventListener("mouseleave", () => {
-  notifff.innerHTML = `<img src="./img/icons/bell.svg"/>`
+  notifff.src = './img/icons/bell.svg'
 })
-let heart = document.querySelector('.header__acc--whishlist')
+let heart = document.querySelector('.header__acc--whishlist img')
 heart.addEventListener("mouseenter", () => {
-  heart.innerHTML = `<img src="./img/icons/heart_orange.svg"/>`
+  heart.src = "./img/icons/heart_orange.svg"
 })
 heart.addEventListener("mouseleave", () => {
-  heart.innerHTML = `<img src="./img/icons/heart.svg"/>`
+  heart.src = "./img/icons/heart.svg"
 })
-let market = document.querySelector('.header__acc--basket')
+let market = document.querySelector('.header__acc--basket img')
 market.addEventListener("mouseenter", () => {
-  market.innerHTML = `<img src="./img/icons/supermarket_orange.svg"/>`
+  market.src = "./img/icons/supermarket_orange.svg"
 })
 market.addEventListener("mouseleave", () => {
-  market.innerHTML = `<img src="./img/icons/supermarket.svg"/>`
+  market.src = "./img/icons/supermarket.svg"
 })
 
-let users = document.querySelector('.header__acc--log')
+let users = document.querySelector('.header__acc--log img')
 users.addEventListener("mouseenter", () => {
-  users.innerHTML = `<img src="./img/icons/user_orange.svg"/>`
+  users.src = './img/icons/user_orange.svg'
 })
 users.addEventListener("mouseleave", () => {
-  users.innerHTML = `<img src="./img/icons/user.svg"/>`
+  users.src = "./img/icons/user.svg"
 })
 
 //STORIES-----------------------------------------------------------

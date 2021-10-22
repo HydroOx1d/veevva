@@ -858,7 +858,7 @@
   height: 100%;
   top: 0;
   left: -200%;
-  padding: 0 80px;
+  padding: 60px 80px;
   -webkit-transition: 300ms ease-in-out 0s;
   -o-transition: 300ms ease-in-out 0s;
   transition: 300ms ease-in-out 0s;
@@ -994,7 +994,7 @@
   height: 100%;
   width: 35%;
   margin: 0;
-  padding: 85px 100px;
+  padding: 60px 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: none;
@@ -1016,6 +1016,10 @@
   background-color: #d2d2d2;
 }
 
+.header__navigation--close2 {
+  background-color: #F6F7FB;
+  padding: 15px;
+}
 .header--menu__bgc {
   position: absolute;
   top: 0;
@@ -1026,14 +1030,15 @@
 }
 
 .header__navigation--menu2 span {
-  font-family: "Montserrat-Bold";
+  font-family: Gilroy, sans-serif;
+  font-weight: 700;
   font-size: 20px;
   color: #000;
   margin-bottom: 20px;
 }
 
 .header__navigation--menu2 a {
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   color: #000;
 }
@@ -1479,7 +1484,7 @@ a:hover {
   .header__navigation--menu2 {
     width: 50%;
     left: 41%;
-    padding: 80px 40px;
+    padding: 60px 40px;
   }
 
   .header__navigation--back {
@@ -1540,6 +1545,10 @@ a:hover {
   .header__navigation--menu2 {
     left: 43.5%;
     width: 100%;
+  }
+
+  .header__navigation--menu2 a {
+    font-size: 16px;
   }
   .saleshits__nav {
     padding: 20px 0;
@@ -1739,7 +1748,7 @@ a:hover {
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .header__navigation--menu {
-    padding: 0px 40px;
+    padding: 60px 40px;
     height: 100%;
     line-height: 3;
   }
