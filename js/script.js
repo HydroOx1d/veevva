@@ -384,7 +384,7 @@ setInterval(() => {
   }
   currentSlide++;
   goToSlide(currentSlide);
-}, 5000);
+}, 10000);
 
 // переход Slide
 function goToSlide(slideNumber) {
