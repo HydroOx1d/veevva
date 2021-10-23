@@ -863,7 +863,7 @@
   height: 100%;
   top: 0;
   left: -200%;
-  padding: 60px 80px;
+  padding: 30px 80px;
   -webkit-transition: 300ms ease-in-out 0s;
   -o-transition: 300ms ease-in-out 0s;
   transition: 300ms ease-in-out 0s;
@@ -999,7 +999,7 @@
   height: 100%;
   width: 35%;
   margin: 0;
-  padding: 60px 100px;
+  padding: 80px 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: none;
@@ -1371,9 +1371,9 @@ a:hover {
 
 .container {
   width: 100%;
-  max-width: 1320px;
-  margin: 0px auto;
-  padding: 20px 0 0 0;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px 10px 0 10px;
 }
 
 .wrapper {
@@ -1489,7 +1489,7 @@ a:hover {
   .header__navigation--menu2 {
     width: 50%;
     left: 41%;
-    padding: 60px 40px;
+    padding: 75px 40px;
   }
 
   .header__navigation--back {
@@ -1753,7 +1753,7 @@ a:hover {
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .header__navigation--menu {
-    padding: 60px 40px;
+    padding: 30px 40px;
     height: 100%;
     line-height: 3;
   }
@@ -1783,7 +1783,7 @@ a:hover {
     max-width: 100%;
   }
   .header__acc--icon {
-    padding-left: 3px;
+    padding-left: 5px;
   }
 }
 
