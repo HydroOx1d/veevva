@@ -384,7 +384,7 @@ setInterval(() => {
   }
   currentSlide++;
   goToSlide(currentSlide);
-}, 10000);
+}, 5000);
 
 // переход Slide
 function goToSlide(slideNumber) {
@@ -418,6 +418,8 @@ $("#slick1").slick({
     },
   ],
 });
+
+
 $("#stories-container").slick({
   slidesToShow: 14,
   slidesToScroll: 2,
@@ -449,3 +451,5 @@ likeImgBlack.forEach((likeBlack) => {
     likeBlack.src = "./img/bestsellerImg/blackHeard.png";
   });
 });
+
+
