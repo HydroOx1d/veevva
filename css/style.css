@@ -832,7 +832,6 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-top: 10px;
 }
 
 .header__navigation--toggle {
@@ -1021,10 +1020,6 @@
   background-color: #d2d2d2;
 }
 
-.header__navigation--close2 {
-  background-color: #F6F7FB;
-  padding: 15px;
-}
 .header--menu__bgc {
   position: absolute;
   top: 0;
@@ -1064,7 +1059,7 @@
 }
 
 .footer__inner {
-  padding: 20px 0;
+  padding: 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1460,7 +1455,7 @@ a:hover {
   }
 
   .container {
-    padding: 20px 20px;
+    padding: 20px 30px;
   }
 }
 
@@ -1470,17 +1465,17 @@ a:hover {
   }
   .header__navigation--toggle {
     position: absolute;
-    left: 20px;
-    top: 130px;
+    top: 100px;
+    left: 35px;
   }
 
   .header__search {
     position: absolute;
-    right: 20px;
-    top: 120px;
+    top: 90px;
+    right: 32px;
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    width: 95%;
   }
 
   .header__search input {
@@ -1526,6 +1521,7 @@ a:hover {
     align-items: flex-start;
     margin-bottom: 20px;
     line-height: 50px;
+    padding: 0;
   }
 
   .saleshits__inner {
@@ -1540,7 +1536,6 @@ a:hover {
   .stories-container {
     margin-top: 60px;
   }
-
   .header__navigation--menu {
     width: 50%;
   }
@@ -1559,21 +1554,22 @@ a:hover {
     padding: 20px 0;
   }
   .header__navigation--toggle {
-    top: 100px;
-    left: 20px;
+    top: 80px;
+    left: 30px;
+    background-color: #F6F7FB;
+    padding: 10px;
   }
 
   .header__search {
-    max-width: 83%;
+    max-width: 80%;
+    top: 80px;
+    right: 32px;
   }
 
   .header__search input {
     max-width: 100%;
   }
 
-  .header__search {
-    top: 90px;
-  }
 
   .saleshits {
     margin: 100px 0;
@@ -1592,33 +1588,46 @@ a:hover {
     max-width: 80%;
   }
 
-  .header__navigation--close2 {
-    background-color: #F6F7FB;
-    padding: 15px;
+  .header__acc--whishlist:before {
+    content: "|";
     position: absolute;
-    top: -10px;
+    color: #ebe4e4;
+    left: 10%;
+    bottom: 50%;
+    height: 100%;
   }
 
+  .header__acc--basket:before {
+    content: "|";
+    position: absolute;
+    color: #ebe4e4;
+    left: 15%;
+    bottom: 50%;
+    height: 100%;
+  }
+
+  .header__acc--log:before {
+    left: 15%;
+  }
   .header__navigation--close {
     display: block;
     width: 20px;
     height: 20px;
   }
 
+
+  .header__logo img {
+    max-width: 100%;
+  }
+
   .header__navigation--toggle {
     z-index: 10;
+    left: 25px;
   }
 
-  .header__acc--icon {
-    padding-left: 7px;
-  }
-
-  .header__acc--icon:before {
-    left: 0;
-  }
 
   .header__acc--icon img {
-    width: 23px;
+    width: 24px;
   }
 
   .bgc {
@@ -1629,6 +1638,7 @@ a:hover {
   .header__navigation--menu {
     top: 150px;
     background-color: #F6F7FB;
+    width: 100%;
   }
 
   .header__navigation--menu2 {
@@ -1648,7 +1658,8 @@ a:hover {
   }
 
   .header__search {
-    max-width: 100%;
+    max-width: 80%;
+    right: 20px;
   }
 
   .header__search input {
@@ -1693,36 +1704,53 @@ a:hover {
 
 @media only screen and (max-width: 320px) {
   .header__logo {
-    max-width: 50%;
+    max-width: 30%;
   }
 
+  .header__inner {
+    margin-top: 15px;
+  }
   .container {
-    padding: 10px 10px;
+    padding: 0px 15px;
   }
 
   .header__navigation--menu {
-    padding: 60px 40px;
-    height: 659px;
+    padding: 0px 40px 0 40px;
+    height: 100%;
     width: 100%;
-    top: 110px;
+    top: 100px;
   }
   .header__navigation--menu2 {
     top: 115px;
   }
 
   .header__navigation--toggle {
-    top: 70px;
-    left: 10px;
+    top: 45px;
+    left: 15px;
     z-index: 10;
+    padding: 7px;
+  }
+
+
+  .header__navigation--toggle img {
+    width: 20px;
   }
 
   .header__search {
-    width: 75%;
-    top: 60px;
+    width: 80%;
+    top: 45px;
     right: 10px;
   }
   .header__search input {
     max-width: 100%;
+    height: 34px;
+  }
+
+  .header__search button {
+    height: 34px;
+  }
+  .header__search input::placeholder {
+    font-size: 12px;
   }
 
   .header__acc--icon {
@@ -1749,6 +1777,7 @@ a:hover {
   .header__navigation--menu2 a {
     font-size: 16px;
   }
+
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
@@ -1758,38 +1787,78 @@ a:hover {
     line-height: 3;
   }
 }
+@media only screen and (min-width: 321px) and (max-width: 410px) {
+  .header__acc--icon {
+    padding-left: 3px;
+  }
 
-@media only screen and (min-width: 321px) and (max-width: 576px) {
+  .header__logo img {
+    max-width: 80%;
+  }
+  .header__acc--whishlist:before {
+    content: "|";
+    position: absolute;
+    color: #ebe4e4;
+    left: -15%;
+    bottom: 50%;
+    height: 100%;
+  }
+
+  .header__acc--basket:before {
+    content: "|";
+    position: absolute;
+    color: #ebe4e4;
+    left: -5%;
+    bottom: 50%;
+    height: 100%;
+  }
+
+  .header__acc--log:before {
+    left: -5%;
+  }
+
+  .header__search {
+    max-width: 70%;
+  }
+
+
+}
+@media only screen and (min-width: 321px) and (max-width: 575px) {
   .header__navigation--menu {
+    top: 135px;
     padding: 30px 50px;
     width: 100%;
     height: 50%;
     line-height: 3;
   }
 
+  .header__navigation--close2 {
+    width: 30px;
+  }
+
   .container {
-    padding: 10px;
+    padding: 1px 20px;
   }
 
   .header__navigation--toggle {
-    left: 15px;
+    left: 20px;
   }
-
   .header__search {
-    right: 10px;
-    width: 80%;
+    right: 20px;
+    width: 75%;
   }
   .header__search input {
     max-width: 100%;
   }
-  .header__acc--icon {
-    padding-left: 5px;
+
+  .header__inner {
+    margin-top: 20px;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
   .header__search {
-    width: 88%;
+    width: 86%;
   }
   .header__search input {
     max-width: 100%;
@@ -1805,6 +1874,26 @@ a:hover {
 @media only screen and (min-width: 993px) and (max-width: 1030px) {
   .header__navigation--menu2 {
     left: 40%;
+  }
+
+  .header__search {
+    width: 500px;
+  }
+
+  .header__search input {
+    padding-left: 15px;
+    width: 450px;
+  }
+
+  .header__acc--icon {
+    padding-left: 23px;
+  }
+
+  .header__search input::placeholder {
+    font-size: 15px;
+  }
+  .header__search button {
+    width: 54px;
   }
 }
 
