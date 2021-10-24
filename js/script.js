@@ -18,6 +18,7 @@ testWebP(function (support) {
 
 const navigation = document.querySelector(".header__navigation--menu");
 const navBtn = document.querySelector(".header__navigation--toggle");
+const navBtnImg = document.querySelector(".header__navigation--toggle img");
 const head = document.querySelector(".header");
 const closeMenu = document.querySelector(".header__navigation--close");
 const navigation2 = document.querySelectorAll(".header__navigation--menu2");
@@ -40,11 +41,13 @@ navBtn.addEventListener("click", () => {
   if(navigation.classList.contains('active')) {
     head.appendChild(bgc);
     document.body.style.overflow = "hidden";
-    navBtn.innerHTML = `<img class="header__navigation--close2" src="./img/icons/close.svg" alt="" />`
+    navBtnImg.src = './img/icons/close.svg'
+    navBtnImg.classList.add("header__navigation--close2")
   } else {
     head.removeChild(bgc);
     document.body.style.overflow = "visible";
-    navBtn.innerHTML = `<img src="./img/icons/menu.svg" alt="" /> <a>Все категории</a>`
+    navBtnImg.src = './img/icons/menu.svg'
+    navBtnImg.classList.remove("header__navigation--close2")
   }
 });
 
