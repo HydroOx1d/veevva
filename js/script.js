@@ -31,9 +31,21 @@ let menuBgc = document.createElement("div");
 menuBgc.className = "header--menu__bgc";
 
 navBtn.addEventListener("click", () => {
-  navigation.classList.add("active");
-  document.body.style.overflow = "hidden";
-  head.appendChild(bgc);
+  navigation.classList.toggle("active");
+  for(let i = 0; i < navItem.length; i++) {
+    navItem[i].classList.remove('active3')
+    navImg[i].style.filter = 'contrast(0)'
+    navigation2[i].classList.remove('active2')
+  }
+  if(navigation.classList.contains('active')) {
+    head.appendChild(bgc);
+    document.body.style.overflow = "hidden";
+    navBtn.innerHTML = `<img class="header__navigation--close2" src="./img/icons/close.svg" alt="" />`
+  } else {
+    head.removeChild(bgc);
+    document.body.style.overflow = "visible";
+    navBtn.innerHTML = `<img src="./img/icons/menu.svg" alt="" /> <a>Все категории</a>`
+  }
 });
 
 for (let i = 0; i < backUp.length; i++) {
@@ -72,6 +84,7 @@ bgc.onclick = function () {
   }
   head.removeChild(bgc);
   document.body.style.overflow = "auto";
+  navBtn.innerHTML = `<img src="./img/icons/menu.svg" alt="" /> <a>Все категории</a>`
   navigation.removeChild(menuBgc);
   navItem.forEach((el) => {
     el.classList.remove("active3");
@@ -81,18 +94,18 @@ bgc.onclick = function () {
   });
 };
 
-closeMenu.addEventListener("click", () => {
-  navigation.classList.remove("active");
-  document.body.style.overflow = "auto";
-  head.removeChild(bgc);
-
-  navItem.forEach((el) => {
-    el.classList.remove("active3");
-  });
-  navImg.forEach((el) => {
-    el.style.filter = "contrast(0)";
-  });
-});
+// closeMenu.addEventListener("click", () => {
+//   navigation.classList.remove("active");
+//   document.body.style.overflow = "auto";
+//   head.removeChild(bgc);
+//
+//   navItem.forEach((el) => {
+//     el.classList.remove("active3");
+//   });
+//   navImg.forEach((el) => {
+//     el.style.filter = "contrast(0)";
+//   });
+// });
 
 for (let i = 0; i < navItem.length; i++) {
   navItem[i].addEventListener("click", () => {
@@ -103,19 +116,45 @@ for (let i = 0; i < navItem.length; i++) {
       content.classList.remove("active2");
       navItem[i].classList.remove("active3");
       navigation.removeChild(menuBgc);
-      navImg.forEach((el) => {
-        el.style.filter = "contrast(0)";
-      });
+      navImg[i].style.filter = "contrast(0)";
     } else {
       content2.classList.remove("active2");
       content.classList.add("active2");
       navItem[i].classList.add("active3");
-      navImg.forEach((el) => {
-        el.style.filter = "contrast(10)";
-      });
+      navImg[i].style.filter = "contrast(10)";
     }
   });
 }
+
+let notifff = document.querySelector('.header__acc--notif img')
+notifff.addEventListener("mouseenter", () => {
+  notifff.src = './img/icons/bell_orange.svg'
+})
+notifff.addEventListener("mouseleave", () => {
+  notifff.src = './img/icons/bell.svg'
+})
+let heart = document.querySelector('.header__acc--whishlist img')
+heart.addEventListener("mouseenter", () => {
+  heart.src = "./img/icons/heart_orange.svg"
+})
+heart.addEventListener("mouseleave", () => {
+  heart.src = "./img/icons/heart.svg"
+})
+let market = document.querySelector('.header__acc--basket img')
+market.addEventListener("mouseenter", () => {
+  market.src = "./img/icons/supermarket_orange.svg"
+})
+market.addEventListener("mouseleave", () => {
+  market.src = "./img/icons/supermarket.svg"
+})
+
+let users = document.querySelector('.header__acc--log img')
+users.addEventListener("mouseenter", () => {
+  users.src = './img/icons/user_orange.svg'
+})
+users.addEventListener("mouseleave", () => {
+  users.src = "./img/icons/user.svg"
+})
 
 //STORIES-----------------------------------------------------------
 
