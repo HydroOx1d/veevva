@@ -39,13 +39,13 @@
 /* SLIDER */
 
 .slider {
-  height: 347px;
+  height: 360px;
   overflow: hidden;
-  /* margin-top: 35px; */
   position: relative;
   max-width: 1320px;
   width: 100%;
   position: relative;
+  background-image: url("../img/slider/sliderBackground.jpg");
 }
 
 .slides-container {
@@ -147,7 +147,7 @@
 } */
 .stories-container .slick-next,
 .stories-container .slick-prev {
-  left: -500px;
+  left: -100%;
 }
 .stories-container .slick-slide.slick-cloned {
   max-width: 500px !important;
@@ -161,6 +161,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  -ms-width: 87.2px;
   width: 87.2px !important;
   height: 100px;
   overflow: hidden;
@@ -206,12 +207,13 @@
   transition: 0.5s ease;
 }
 .stories a {
-  text-decoration: none;
-  margin-top: 5px;
-  font-size: 8px;
-  line-height: 12px;
   font-family: Gilroy;
-  text-align: center;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  color: #000000;
+  text-decoration: none;
 }
 .backgroundModal {
   background-color: rgba(0, 0, 0, 0.233);
@@ -373,14 +375,17 @@
   border: 1px solid #d6d6d6;
 }
 .carousel-h1 {
-  margin-top: 30px !important;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #1d1d1d;
 }
 .carousel-item {
   display: flex !important;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 148px;
+  height: 146px;
   width: 150px !important;
   flex-direction: column;
   position: relative;
@@ -393,6 +398,13 @@
 .carousel-item:hover {
   border: 1px solid #7367f0;
   color: #7367f0;
+}
+.carousel-p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  max-width: 100px;
 }
 /* photo colors */
 .one {
@@ -505,7 +517,6 @@
   font-size: 20px;
   line-height: 24px;
   color: #1d1d1d;
-  margin-top: 10px;
 }
 .slick-next,
 .slick-prev {
@@ -634,6 +645,7 @@
 
 /* card */
 .card-container {
+  max-width: 1320px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -850,7 +862,6 @@
   cursor: pointer;
 }
 
-
 .header__navigation--toggle a {
   font-size: 16px;
   margin-left: 10px;
@@ -1026,7 +1037,7 @@
 }
 
 .header__navigation--close2 {
-  background-color: #F6F7FB;
+  background-color: #f6f7fb;
   padding: 15px;
 }
 .header--menu__bgc {
@@ -1375,9 +1386,9 @@ a:hover {
 
 .container {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 20px 10px 0 10px;
+
 }
 
 .wrapper {
@@ -1432,7 +1443,6 @@ a:hover {
     left: 24%;
   }
 }
-
 
 @media only screen and (max-width: 1440px) {
   .header__navigation--menu2 {
@@ -1597,7 +1607,7 @@ a:hover {
   }
 
   .header__navigation--close2 {
-    background-color: #F6F7FB;
+    background-color: #f6f7fb;
     padding: 15px;
     position: absolute;
     top: -10px;
@@ -1626,13 +1636,13 @@ a:hover {
   }
 
   .bgc {
-    background-color: rgba(255,255,255, 0);
+    background-color: rgba(255, 255, 255, 0);
     z-index: 1;
   }
 
   .header__navigation--menu {
     top: 150px;
-    background-color: #F6F7FB;
+    background-color: #f6f7fb;
   }
 
   .header__navigation--menu2 {
@@ -2022,8 +2032,9 @@ a:hover {
   .slide-text span {
     font-size: 16px;
   }
-  .time-like{
-    max-width: 200px;
+  .time-like {
+    max-width: 205px;
+    margin-top: -8;
   }
 }
 
@@ -2049,11 +2060,17 @@ a:hover {
 }
 @media (max-width: 600px) {
   .carousel-h1 {
-    max-width: 400px;
-    padding-left: 10px;
+    max-width: 434px;
+    padding-left: 0px;
+    margin-top: 17px;
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 19px;
+    letter-spacing: 1px;
   }
   #stories-container {
-    height: 160px !important;
+    height: 154px !important;
     margin-top: 70px;
     margin-bottom: 0px;
   }
@@ -2068,15 +2085,16 @@ a:hover {
 
   .orange-border-img:hover,
   .gray-border-img:hover {
-    -webkit-width: 70px;
-    width: 70px;
-    -webkit-height: 70px;
-    height: 70px;
+    -webkit-width: 68px;
+    width: 68px;
+    -webkit-height: 68px;
+    height: 68px;
   }
 
   .orange-border-img {
-    width: 78px;
-    height: 78px;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 8px;
   }
   .stories a {
     font-size: 15px;
@@ -2085,20 +2103,29 @@ a:hover {
     max-width: 440px;
     width: 100%;
     overflow: hidden;
-    height: 160px !important;
+    height: 160px;
     margin-top: 0px;
   }
 
   .slider {
-    max-width: 440px;
+    max-width: 434px;
     margin-top: 10px;
   }
+  .container-video {
+    max-width: 434px;
+    width: 100%;
+  }
+
+  /* ------------------------------------ */
   .slick-slider {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     max-width: 1320px !important;
+  }
+  .slick-slide {
+    max-width: 142px;
   }
   #slick1 {
     display: flex;
@@ -2118,10 +2145,7 @@ a:hover {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .slider {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+
   .slide-text b {
     font-size: 20px;
   }
@@ -2137,7 +2161,7 @@ a:hover {
   }
   .slick-wrapper {
     height: 280px;
-    max-width: 430px;
+    max-width: 435px;
   }
   .slick-next,
   .slick-prev {
@@ -2160,37 +2184,38 @@ a:hover {
   .carousel-item {
     height: 140px;
     width: 150px !important;
-    padding-top: 20px;
+    padding-top: 0px;
   }
-  .slick-wrapper{
+  .slick-wrapper {
     margin-top: 14px;
   }
   .card-container {
     margin-top: 0px;
-    grid-gap: 10px !important;
+    grid-gap: 10px;
+    margin-top: 4px;
   }
   /* BESTSELLERS */
-  .bestsellers{
+  .bestsellers {
     max-width: 430px;
   }
   /* ------------------- */
   /* CARD */
-  .product-cards{
-    margin-top: 10px;
+  .product-cards {
+    margin-top: 5px;
     overflow: hidden;
   }
-  .responsive{
+  .responsive {
     font-size: 30px;
   }
-.price-card{
-  margin-top: -13px;
-}
-.card{
-  margin-bottom: 5px;
-}
-.introduction-card{
- margin-top: 5px;
-}
+  .price-card {
+    margin-top: -13px;
+  }
+  .card {
+    margin-bottom: 5px;
+  }
+  .introduction-card {
+    margin-top: 5px;
+  }
   /* ----------------- */
 }
 
@@ -2226,9 +2251,6 @@ a:hover {
   .card {
     max-width: 208px;
     width: 100%;
-  }
-  .card-container {
-    grid-gap: 10px;
   }
 }
 @media (max-width: 538px) {
@@ -2313,9 +2335,4 @@ a:hover {
   }
 }
 
-
-
 /* INTERNET EXPLORER ============================================================*/
-@media all and (-ms-high-contrast: none) {
-
-}
