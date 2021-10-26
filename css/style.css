@@ -39,7 +39,7 @@
 /* SLIDER */
 
 .slider {
-  height: 360px;
+  height: 347px;
   overflow: hidden;
   position: relative;
   max-width: 1320px;
@@ -589,6 +589,9 @@
 }
 
 /* CARDS Совместные покупки ------------------------------------*/
+
+
+
 .product-cards {
   margin-top: 17px;
   width: 100%;
@@ -661,21 +664,21 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   transition: 0.5s;
   cursor: pointer;
+  border: solid 1px transparent;
+  overflow: hidden;
 }
 .card:hover {
   background: #ffffff;
   border: 1px solid #7367f0;
+  overflow: hidden;
 }
 
 .img-part {
   position: relative;
-}
-.card-img-container {
-  max-width: 315px;
+  background-image: url('../img/cardImg/cardImgBrash.jpg');
+  max-width: 314px;
   width: 100%;
-}
-.card-img-container img {
-  width: 100%;
+  height: 300px;
 }
 .time-like {
   max-width: 299px;
@@ -1392,6 +1395,7 @@ a:hover {
 }
 
 .wrapper {
+  width: 100%;
   min-height: 100%;
   position: relative;
   overflow-x: hidden;
@@ -1905,6 +1909,10 @@ a:hover {
   .change-slide-btn {
     display: none;
   }
+  .stories-wrap{
+    max-width: 946px;
+    width: 100%;
+  }
   .slick-wrapper {
     max-width: 964px;
     margin: auto;
@@ -1915,8 +1923,8 @@ a:hover {
     margin: auto;
   }
   .bestsellers {
-    max-width: 946px;
-    margin: auto;
+    max-width: 964px;
+    margin: 0 auto;
   }
   .carousel-h1 {
     max-width: 946px;
@@ -1950,28 +1958,34 @@ a:hover {
   .slick-prev {
     left: -35px;
   }
-}
-
-@media (max-width: 1200px) {
+  .small-top-product {
+    display: none;
+  }
   .bottom-small-products {
     flex-direction: column;
     max-width: 308px;
     margin-top: 0;
   }
+  .big-product{
+    max-width: 636px;
+    width: 100%;
+  }
+  .small-products{
+    max-width: 308px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+
   .small-products {
     max-width: 308px;
   }
-
   .big-product {
     max-width: 636px;
   }
-
-  .small-top-product {
-    display: none;
-  }
-
   .introduction-card {
-    max-width: 708px;
+    max-width: 950px;
   }
 }
 
@@ -2003,6 +2017,12 @@ a:hover {
   .new-vevva-display {
     display: none;
   }
+  .card{
+    max-width: 350px;
+  }
+  .img-part{
+    max-width: 350px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -2017,6 +2037,13 @@ a:hover {
   }
   .slide-text span {
     font-size: 18px;
+  }
+  .card{
+    max-width: 344px;
+  }
+
+  .new-in-veeva{
+    display: none;
   }
 }
 @media (max-width: 700px) {
@@ -2046,6 +2073,9 @@ a:hover {
   .card {
     max-width: 240px;
     width: 100%;
+  }
+  .img-part{
+  height: 250px;
   }
   .bestsellers {
     max-width: 500px;
@@ -2249,11 +2279,45 @@ a:hover {
     margin-top: 6px;
   }
   .card {
-    max-width: 208px;
+    max-width: 240px;
     width: 100%;
   }
 }
 @media (max-width: 538px) {
+  .card {
+    max-width: 200px;
+    width: 100%;
+  }
+  .bestsellers {
+    max-width: 360px;
+  }
+  .slick-wrapper {
+    max-width: 360px;
+  }
+
+  .carousel-h1 {
+    max-width: 360px;
+  }
+  .card-container {
+    grid-gap: 10px;
+  }
+}
+@media (max-width: 438px) {
+  .card {
+    max-width: 180px;
+    width: 100%;
+  }
+
+  .slick-wrapper {
+    max-width: 400px;
+  }
+
+  .carousel-h1 {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
   .card {
     max-width: 180px;
     width: 100%;
@@ -2274,20 +2338,26 @@ a:hover {
     grid-gap: 10px;
   }
 }
-@media (max-width: 438px) {
+
+@media (max-width: 390px) {
   .card {
     max-width: 160px;
     width: 100%;
   }
-
+  .bestsellers {
+    max-width: 360px;
+  }
   .slick-wrapper {
-    max-width: 400px;
+    max-width: 360px;
   }
   .slider {
-    max-width: 400px;
+    max-width: 360px;
   }
   .carousel-h1 {
-    max-width: 400px;
+    max-width: 360px;
+  }
+  .card-container {
+    grid-gap: 10px;
   }
 }
 @media (max-width: 350px) {
@@ -2313,7 +2383,8 @@ a:hover {
     font-size: 18px;
   }
 }
-@media (max-width: 390px) {
+
+@media (max-width: 320px) {
   .card {
     max-width: 140px;
     width: 100%;
